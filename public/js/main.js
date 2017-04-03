@@ -66,6 +66,8 @@ function Load() {
 
     $('#Main').addClass('loaded');
 
+    $('body').addClass('show_border');
+
     setTimeout(function() {
         $('.main').addClass('no_selector');
     }, 1300);
