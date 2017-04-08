@@ -27,6 +27,7 @@
     <title>Next House Official Website</title>
     <link href="public/css/normalize.css" rel="stylesheet">
     <link href="public/css/grid.css" rel="stylesheet">
+    <link href="public/css/lightbox.min.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
 </head>
 <body class="main_page">
@@ -168,14 +169,16 @@
             </div>
             <div class="col-md-7 col-sm-7 col-xs-12">
                 <div class="project_cover">
-                    <img src="{{images.[0].source}}" alt="" class="img-responsive">
+                    <a href="{{images.[0].source}}" data-lightbox="gallery" data-title="{{title}}">
+                        <img src="{{images.[0].source}}" alt="" class="img-responsive">
+                    </a>
                 </div>
                 <div class="grid">
                     <div class="grid-sizer"></div>
                     {{#images}}
-                       <div class="grid-item">
+                       <a href="{{source}}" class="grid-item" data-lightbox="gallery" data-title="{{title}}">
                             <img src="{{source}}" />
-                        </div>
+                        </a>
                     {{/images}}
                 </div>
             </div>
@@ -183,9 +186,10 @@
     </script>
 
     <script src="public/js/jquery.min.js"></script>
-    <script src="http://masonry.desandro.com/masonry.pkgd.js"></script>
-    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script>
+    <script src="public/js/masonry.js"></script>
+    <script src="public/js/imagesloaded.js"></script>
     <script src="public/js/handlebars.js"></script>
+    <script src="public/js/lightbox.min.js"></script>
     <script src="public/js/main.js"></script>
 </body>
 </html>

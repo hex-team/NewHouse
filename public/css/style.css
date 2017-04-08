@@ -1335,7 +1335,12 @@ body {
     cursor: pointer;
 }
 
-.inner_project .project_cover:after{
+.inner_project .project_cover a{
+    display: block;
+    position: relative;
+}
+
+.inner_project .project_cover a:after{
     content: '';
     position: absolute;
     left: 50%;
@@ -1359,7 +1364,7 @@ body {
     transition: opacity .2s ease-out;
 }
 
-.inner_project .project_cover:hover:after{
+.inner_project .project_cover a:hover:after{
     opacity: 1;
     -webkit-transition: opacity .2s ease-out;
     -moz-transition: opacity .2s ease-out;
@@ -1372,7 +1377,7 @@ body {
     transition-delay: .25s;
 }
 
-.inner_project .project_cover:before{
+.inner_project .project_cover a:before{
     content: '';
     position: absolute;
     left:15px;
@@ -1392,7 +1397,7 @@ body {
     background-color:rgba(255, 255, 51, 0.55);
 }
 
-.inner_project .project_cover:hover:before{
+.inner_project .project_cover a:hover:before{
     content: '';
     position: absolute;
     left:15px;
