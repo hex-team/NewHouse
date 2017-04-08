@@ -1068,14 +1068,14 @@ body {
 
 .social {
     position: absolute;
-    bottom: 30px;
+    bottom: 25px;
     right: 30px;
 }
 
 .social ul {
     display: block;
     padding-left: 0px;
-    height: 30px;
+    line-height: 1;
     margin: 0;
 }
 
@@ -1093,6 +1093,7 @@ body {
     -moz-animation: Show_Social .3s forwards .9s;
     -o-animation: Show_Social .3s forwards .9s;
     animation: Show_Social .3s forwards .9s;
+    margin-left: 0;
 }
 
 .social ul li:nth-child(2){
@@ -1190,7 +1191,7 @@ body {
 
 .copyright{
     position: absolute;
-    bottom: 30px;
+    bottom: 25px;
     left: 30px;
 }
 
@@ -1198,6 +1199,7 @@ body {
     color: #999;
     direction: rtl;
     font-size: 11px;
+    margin-bottom: 0;
 }
 
 /****************************
