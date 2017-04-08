@@ -25,6 +25,8 @@
     <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png">
     <link rel="icon" href="images/favicon-62.png" sizes="62x62" type="image/png">-->
     <title>Next House Official Website</title>
+    <link href="public/css/normalize.css" rel="stylesheet">
+    <link href="public/css/grid.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
 </head>
 <body class="main_page">
@@ -38,7 +40,6 @@
     <section class='main' id='Main'>
         <!-- Content Part -->
         <div class="content">
-
         </div>
         <!-- Logo Part -->
         <div class='logo'>
@@ -147,12 +148,44 @@
                 </li>
             </ul>
         </div>
+        <!-- Copyright Part -->
+        <div class="copyright">
+            <p>© 2017 تمامی حقوق برای ... محفوظ می باشد.</p>
+        </div>
     </section>
 
-    <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+    <!-- Project Inner Template -->
+    <script id="InnerProject" type="text/x-handlebars-template">
+        <div class="inner_project">
+            <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="inner_project_header">
+                    <h2>{{title}}</h2>
+                    <h3>{{date}}</h3>
+                </div>
+                <div class="inner_project_content">
+                    <p>{{description}}</p>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="project_cover">
+                    <img src="{{images.[0].source}}" alt="" class="img-responsive">
+                </div>
+                <div class="grid">
+                    <div class="grid-sizer"></div>
+                    {{#images}}
+                       <div class="grid-item">
+                            <img src="{{source}}" />
+                        </div>
+                    {{/images}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script src="public/js/jquery.min.js"></script>
+    <script src="http://masonry.desandro.com/masonry.pkgd.js"></script>
+    <script src="http://imagesloaded.desandro.com/imagesloaded.pkgd.js"></script>
+    <script src="public/js/handlebars.js"></script>
     <script src="public/js/main.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@ window.addEventListener('load', Load, !1);
 ****************************/
 
 function MainPageInit(){
+    $('html').removeClass('inner_content');
     $('.menu').addClass('hide_animation');
     $('.logo').addClass('hide_animation');
     $('.logo_img').addClass('show_again');
@@ -83,6 +84,12 @@ function Load() {
             InnerPageInit();
             ActiveMenu('#project');
             break;
+        case "innerproject":
+            return $('html').addClass('inner_content'),
+            InnerPageInit(),
+            ActiveMenu('#project'),
+            GetSingleProject();
+            break;
         case "news":
             InnerPageInit();
             ActiveMenu('#news');
@@ -151,6 +158,8 @@ $(document).on('click','#CloseMenu',function(event){
 
 $(document).on('click', '.menu li div.inner_menu', function (event) {
     
+    $('.content').removeClass('data_loaded');
+    $('.content').html('');
     $(this).unbind('hover');
     var State = $(this).attr('href').replace('#', '');
     document.location.hash = State;
@@ -178,6 +187,83 @@ function ActiveMenu(href){
 
 /****************************
 *							*
+*   Catch Hash Event       *
+*							*
+****************************/
+
+$(window).bind('hashchange', function() {
+    console.log('change');
+    var State = window.location.hash.replace('#','');
+
+    switch (State) {
+        case "":
+            break;
+        case "project":
+            InnerPageInit();
+            ActiveMenu('#project');
+            break;
+        case "innerproject":
+            return $('html').addClass('inner_content'),
+            InnerPageInit(),
+            ActiveMenu('#project'),
+            GetSingleProject();
+            break;
+        case "news":
+            InnerPageInit();
+            ActiveMenu('#news');
+            break;
+        case "about":
+            InnerPageInit();
+            ActiveMenu('#about');
+            break;
+        case "contact":
+            InnerPageInit();
+            ActiveMenu('#contact');
+            break;
+        case "home":
+            break;
+    }
+});
+
+/****************************
+*							*
+*      Get Page Data        * 
+*							*
+****************************/
+
+function GetSingleProject(){
+
+    var source = $("#InnerProject").html(); 
+    var template = Handlebars.compile(source); 
+
+    var data = {
+        title:'پروژه مسکونی کـژال',
+        date:'تهــران ۱۳۸۶',
+        description:'پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.                    پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.',
+        images:[{source:'public/data/photo_2017-01-29_14-44-15.jpg'},
+        {source:'public/data/photo_2017-01-29_14-44-33.jpg'},
+        {source:'public/data/photo_2017-01-29_14-44-39.jpg'},
+        {source:'public/data/photo_2017-01-29_12-45-36.jpg'},
+        {source:'public/data/photo_2017-01-29_11-59-02.jpg'}]
+    };
+
+    $('.content').append(template(data));
+
+    setTimeout(function(){
+        $('.content').addClass('data_loaded');
+        var $grid = $('.grid').imagesLoaded( function() {
+            $grid.masonry({
+                itemSelector: '.grid-item',
+                percentPosition: true,
+                gutter: 10,
+                columnWidth: '.grid-sizer'
+            }); 
+        });
+    },1200);
+};
+
+/****************************
+*							*
 *      Responsive Event     * 
 *							*
 ****************************/
@@ -189,7 +275,7 @@ function CheckForWidth(){
 }
 
 $( window ).resize(function(e) {
-  if(e.target.outerWidth <= 815 && $(window).width() > 550){
+  if(e.target.outerHeigth <= 815 && $(window).height() > 550){
       //$('nav.menu').css('width',$('.logo').width()+"px");
   }
 });
