@@ -151,8 +151,6 @@ $(document).on('click','#CloseMenu',function(event){
 
 $(document).on('click', '.menu li div.inner_menu', function (event) {
     
-    // $('.content').removeClass('data_loaded');
-    // $('.content').html('');
     $(this).unbind('hover');
     var State = $(this).attr('href').replace('#', '');
     document.location.hash = State;
@@ -242,6 +240,7 @@ function GetSingleProject(){
     setTimeout(function(){
         $('.content').addClass('data_loaded');
         var $grid = $('.grid').imagesLoaded( function() {
+            $('#Gallery').css('opacity','1');
             $grid.masonry({
                 itemSelector: '.grid-item',
                 percentPosition: true,
