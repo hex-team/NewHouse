@@ -5,7 +5,7 @@ const path    = require("path");
 const port    = process.env.PORT || 5000;
 
 app.listen(port, ()=> {
-  console.log('Site Is Running ... ');
+  console.log('Site Is Running ... ' + port);
 });
 
 app.use("/public", express.static(__dirname + '/public'));
