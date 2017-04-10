@@ -185,6 +185,25 @@
         </div>
     </script>
 
+    <script id="AboutPage" type="text/x-handlebars-template">
+        <div class="inner_about">
+            <div class="col-md-10 col-sm-10 col-xs-12 about_full_col">
+                <img src="{{header.source}}" alt="{{title}}" class="img-responsive inner_about_header">
+                <h2 class="about_title">{{title}}</h2>
+                <p class="about_desc">{{description}}</p>
+            </div>
+            <div class="about_bottom">
+                {{#images}}
+                    <div class="col-md-5 col-sm-5 col-xs-12 about_item">
+                        <img src="{{source}}" alt="{{title}}" class="img-responsive">
+                        <h3 class="person_name">{{name}}</h3>
+                        <p class="person_position">{{position}}</p>
+                    </div>
+                {{/images}}
+            </div>
+        </div>
+    </script>
+
     <script src="public/js/jquery.min.js"></script>
     <script src="public/js/masonry.js"></script>
     <script src="public/js/imagesloaded.js"></script>
