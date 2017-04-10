@@ -81,7 +81,7 @@ function Load() {
         case "":
             break;
         case "project":
-            return InnerPageInit(),ActiveMenu('#project');
+            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "innerproject":
             return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
@@ -194,7 +194,7 @@ $(window).bind('hashchange', function() {
         case "":
             break;
         case "project":
-            return InnerPageInit(),ActiveMenu('#project');
+            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "innerproject":
             return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
