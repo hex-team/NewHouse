@@ -81,26 +81,19 @@ function Load() {
         case "":
             break;
         case "project":
-            InnerPageInit();
-            ActiveMenu('#project');
+            return InnerPageInit(),ActiveMenu('#project');
             break;
         case "innerproject":
-            return $('html').addClass('inner_content'),
-            InnerPageInit(),
-            ActiveMenu('#project'),
-            GetSingleProject();
+            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "news":
-            InnerPageInit();
-            ActiveMenu('#news');
+            return InnerPageInit(),ActiveMenu('#news');
             break;
         case "about":
-            InnerPageInit();
-            ActiveMenu('#about');
+            return InnerPageInit(),ActiveMenu('#about');
             break;
         case "contact":
-            InnerPageInit();
-            ActiveMenu('#contact');
+            return InnerPageInit(),ActiveMenu('#contact');
             break;
         case "home":
             break;
@@ -158,8 +151,8 @@ $(document).on('click','#CloseMenu',function(event){
 
 $(document).on('click', '.menu li div.inner_menu', function (event) {
     
-    $('.content').removeClass('data_loaded');
-    $('.content').html('');
+    // $('.content').removeClass('data_loaded');
+    // $('.content').html('');
     $(this).unbind('hover');
     var State = $(this).attr('href').replace('#', '');
     document.location.hash = State;
@@ -192,33 +185,30 @@ function ActiveMenu(href){
 ****************************/
 
 $(window).bind('hashchange', function() {
-    console.log('change');
+
+    $('.content').html('');
+    $('html').removeClass('inner_content');
+    $('.content').removeClass('data_loaded');
+
     var State = window.location.hash.replace('#','');
 
     switch (State) {
         case "":
             break;
         case "project":
-            InnerPageInit();
-            ActiveMenu('#project');
+            return InnerPageInit(),ActiveMenu('#project');
             break;
         case "innerproject":
-            return $('html').addClass('inner_content'),
-            InnerPageInit(),
-            ActiveMenu('#project'),
-            GetSingleProject();
+            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "news":
-            InnerPageInit();
-            ActiveMenu('#news');
+            return InnerPageInit(),ActiveMenu('#news');
             break;
         case "about":
-            InnerPageInit();
-            ActiveMenu('#about');
+            return InnerPageInit(),ActiveMenu('#about');
             break;
         case "contact":
-            InnerPageInit();
-            ActiveMenu('#contact');
+            return InnerPageInit(),ActiveMenu('#contact');
             break;
         case "home":
             break;
