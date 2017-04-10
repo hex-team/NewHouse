@@ -205,7 +205,7 @@ $(window).bind('hashchange', function() {
             return InnerPageInit(),ActiveMenu('#news');
             break;
         case "about":
-            return InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
+            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
             break;
         case "contact":
             return InnerPageInit(),ActiveMenu('#contact');
