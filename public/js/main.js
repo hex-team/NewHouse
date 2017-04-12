@@ -81,7 +81,7 @@ function Load() {
         case "":
             break;
         case "project":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
+            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "innerproject":
             return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
@@ -194,7 +194,7 @@ $(window).bind('hashchange', function() {
         case "":
             break;
         case "project":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
+            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
         case "innerproject":
             return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
@@ -203,7 +203,7 @@ $(window).bind('hashchange', function() {
             return InnerPageInit(),ActiveMenu('#news');
             break;
         case "about":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
+            return InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
             break;
         case "contact":
             return InnerPageInit(),ActiveMenu('#contact');
@@ -235,7 +235,10 @@ function GetSingleProject(){
         {source:'public/data/photo_2017-01-29_11-59-02.jpg'}]
     };
 
-    $('.content').append(template(data));
+    setTimeout(function(){
+        $('html').addClass('inner_content');
+        $('.content').append(template(data));
+    },500);
 
     setTimeout(function(){
         $('.content').addClass('data_loaded');
@@ -264,8 +267,11 @@ function GetAboutTemplate(){
         {source:'public/data/about_3.jpg',name:' مهندس مهـدی محمـدی',position:'مدیر عـامل'}]
     };
 
-    $('.content').append(template(data));
-
+    setTimeout(function(){
+        $('html').addClass('inner_content');
+        $('.content').append(template(data));
+    },500);
+    
     setTimeout(function(){
         $('.content').addClass('data_loaded');
     },1200);
