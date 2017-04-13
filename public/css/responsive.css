@@ -612,4 +612,8 @@
     .project_list .caption h2 {
         font-size: 13px;
     }
+    .blog_list figure img{
+        max-height: 100px;
+        min-height: 100px;
+    }
 }
