@@ -565,13 +565,19 @@
         width: 100%;
     }
     .inner_blog {
-        top: 150px;
+        top: 130px;
         bottom: 100px;
         margin-left: 3%;
+        margin-right: -7%;
+        bottom: 130px;
     }
-    .control {
+    .project_control{
         right: 3%!important;
-        bottom: 50px!important;
+        bottom: 80px!important;
+    }
+    .blog_control{
+        right: 3%!important;
+        bottom: 40px!important;
     }
     .social,
     .inner_content .social {
@@ -596,9 +602,9 @@
         position: absolute;
     }
     .project_page {
-        top: 150px;
+        top: 130px;
         margin-left: -1%;
-        margin-right: -4%;
+        margin-right: -1%;
     }
     .project_list [class*=' col-'] {
         width: 42%;
@@ -606,8 +612,8 @@
         padding-right: 10px;
     }
     .project_list figure img {
-        min-height: 115px;
-        max-height: 115px;
+        min-height: 80px;
+        max-height: 80px;
     }
     .project_list .caption h2 {
         font-size: 13px;
