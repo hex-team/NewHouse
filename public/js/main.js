@@ -59,49 +59,6 @@ function InnerPageInit(){
 
 /****************************
 *							*
-*      Route Config 	    *
-*							*
-****************************/
-
-function Load() {
-
-    CheckForWidth();
-
-    $('#Main').addClass('loaded');
-
-    $('body').addClass('show_border');
-
-    setTimeout(function() {
-        $('.main').addClass('no_selector');
-    }, 1300);
-
-    var State = window.location.hash.replace('#','');
-
-    switch (State) {
-        case "":
-            break;
-        case "project":
-            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
-            break;
-        case "innerproject":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
-            break;
-        case "news":
-            return InnerPageInit(),ActiveMenu('#news');
-            break;
-        case "about":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
-            break;
-        case "contact":
-            return InnerPageInit(),ActiveMenu('#contact');
-            break;
-        case "home":
-            break;
-    }
-}
-
-/****************************
-*							*
 *      Menu Click Event 	*
 *							*
 ****************************/
@@ -178,6 +135,49 @@ function ActiveMenu(href){
 
 /****************************
 *							*
+*      Route Config 	    *
+*							*
+****************************/
+
+function Load() {
+
+    CheckForWidth();
+
+    $('#Main').addClass('loaded');
+
+    $('body').addClass('show_border');
+
+    setTimeout(function() {
+        $('.main').addClass('no_selector');
+    }, 1300);
+
+    var State = window.location.hash.replace('#','');
+
+    switch (State) {
+        case "":
+            break;
+        case "project":
+            return InnerPageInit(),ActiveMenu('#project'),GetProject();
+            break;
+        case "innerproject":
+            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
+            break;
+        case "blog":
+            return InnerPageInit(),ActiveMenu('#blog'),GetBlogList();
+            break;
+        case "about":
+            return InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
+            break;
+        case "contact":
+            return InnerPageInit(),ActiveMenu('#contact'),ShowTest();
+            break;
+        case "home":
+            break;
+    }
+}
+
+/****************************
+*							*
 *   Catch Hash Event       *
 *							*
 ****************************/
@@ -194,19 +194,19 @@ $(window).bind('hashchange', function() {
         case "":
             break;
         case "project":
-            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
+            return InnerPageInit(),ActiveMenu('#project'),GetProject();
             break;
         case "innerproject":
-            return $('html').addClass('inner_content'),InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
+            return InnerPageInit(),ActiveMenu('#project'),GetSingleProject();
             break;
-        case "news":
-            return InnerPageInit(),ActiveMenu('#news');
+        case "blog":
+            return InnerPageInit(),ActiveMenu('#blog'),GetBlogList();
             break;
         case "about":
             return InnerPageInit(),ActiveMenu('#about'),GetAboutTemplate();
             break;
         case "contact":
-            return InnerPageInit(),ActiveMenu('#contact');
+            return InnerPageInit(),ActiveMenu('#contact'),ShowTest();
             break;
         case "home":
             break;
@@ -218,6 +218,54 @@ $(window).bind('hashchange', function() {
 *      Get Page Data        * 
 *							*
 ****************************/
+
+function GetProject(){
+
+    var source = $("#ProjectPage").html(); 
+    var template = Handlebars.compile(source); 
+
+    var data = [
+        {
+            image:'public/data/photo_2017-01-29_14-44-15.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        },
+        {
+            image:'public/data/photo_2017-01-29_14-44-39.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        },
+        {
+            image:'public/data/photo_2017-01-29_14-44-33.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        },
+        {
+            image:'public/data/photo_2017-01-29_12-45-36.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        },
+        {
+            image:'public/data/photo_2017-01-29_11-59-02.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        },
+        {
+            image:'public/data/photo_2017-01-29_14-44-15.jpg',
+            title:'پروژه مسکونی کـژال',
+            date:'تهــران ۱۳۸۶'
+        }
+    ];
+
+    setTimeout(function(){
+        $('.content').append(template(data));
+        $('.project_list').attr('data-page',0);
+    },500);
+
+    setTimeout(function(){
+        $('.content').addClass('data_loaded');
+    },1200);
+};
 
 function GetSingleProject(){
 
@@ -277,6 +325,52 @@ function GetAboutTemplate(){
     },1200);
 };
 
+function GetBlogList(){
+    var source = $("#BlogPage").html(); 
+    var template = Handlebars.compile(source); 
+
+    var data = [
+        {
+            image:'public/data/photo_2017-01-29_14-44-15.jpg',
+            title:'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
+            date:'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
+            description:'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
+        },
+        {
+            image:'public/data/photo_2017-01-29_14-44-39.jpg',
+            title:'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
+            date:'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
+            description:'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
+        },
+        {
+            image:'public/data/photo_2017-01-29_14-44-33.jpg',
+            title:'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
+            date:'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
+            description:'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
+        },
+        {
+            image:'public/data/photo_2017-01-29_12-45-36.jpg',
+            title:'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
+            date:'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
+            description:'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
+        },{
+            image:'public/data/photo_2017-01-29_11-59-02.jpg',
+            title:'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
+            date:'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
+            description:'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
+        }
+    ];
+
+    setTimeout(function(){
+        $('.content').append(template(data));
+        ScrollSize = parseInt($('.blog_list li').outerHeight());
+    },500);
+    
+    setTimeout(function(){
+        $('.content').addClass('data_loaded');
+    },1200);
+};
+
 /****************************
 *							*
 *      Responsive Event     * 
@@ -284,13 +378,103 @@ function GetAboutTemplate(){
 ****************************/
 
 function CheckForWidth(){
-    if($(window).width() <= 815 && $(window).width() > 550){
-        //$('nav.menu').css('width',$('.logo').width()+"px");
-    }
 }
 
 $( window ).resize(function(e) {
-  if(e.target.outerHeigth <= 815 && $(window).height() > 550){
-      //$('nav.menu').css('width',$('.logo').width()+"px");
-  }
+});
+
+/****************************
+*							*
+*      Blog Scroll Event    * 
+*							*
+****************************/
+
+var ScrollValue = 0;
+var ScrollSize = 0;
+
+$(document).on('click','#UpArrow',function(e){
+    event.preventDefault();
+
+    if($('.inner_blog').scrollTop() !== 0 || $('.inner_blog').scrollTop() == ScrollSize){
+
+        ScrollValue = ScrollValue - ScrollSize;
+
+        $(".inner_blog").stop().animate({
+            scrollTop:  ScrollValue
+        },300);
+    }
+});
+
+$(document).on('click','#DownArrow',function(e){
+    // console.log(ScrollValue + ScrollSize);
+
+    // console.log($(".inner_blog")[0].clientHeight);
+
+    // if($('.blog_list')[0].scrollHeight - ScrollValue > ScrollSize ){
+
+    //     ScrollValue = ScrollValue + ScrollSize;
+
+    //     $(".inner_blog").animate({
+    //         scrollTop:  ScrollValue
+    //     },300);  
+    // }
+
+    ScrollValue = ScrollValue + ScrollSize;
+
+    $('.inner_blog').stop().animate({
+        scrollTop: ScrollValue
+    })
+
+    
+});
+
+/****************************
+*							*
+*  Project Carousel Event   * 
+*							*
+****************************/
+
+var Page = 0;
+
+$(document).on('click','#LeftArrow',function(){
+
+    $('.right').removeClass('disabled');
+
+    Page = parseInt($('.project_list').attr('data-page'));
+
+    if(Page !== 0){
+        $('.project_list').attr('data-page',Page - 1);
+        $('.page_number').text(Page - 1);
+        
+        $('.project_list').removeClass('righttoleft');
+        $('.project_list').removeClass('lefttoright');
+
+        setTimeout(function(){
+            $('.project_list').addClass('righttoleft');
+        },100);
+    }
+    if(Page - 1 == 0){
+        $(this).parent().addClass('disabled');
+    }
+});
+
+$(document).on('click','#RightArrow',function(){
+
+    $('.left').removeClass('disabled');
+
+    Page = parseInt($('.project_list').attr('data-page'));
+    $('.project_list').attr('data-page',Page + 1);
+    $('.page_number').text(Page + 1);
+
+    $('.project_list').removeClass('lefttoright');
+    $('.project_list').removeClass('righttoleft');
+
+    setTimeout(function(){
+        $('.project_list').addClass('lefttoright');
+    },100);
+
+    if(Page + 1 == 2){
+        $(this).parent().addClass('disabled');
+    }
+
 });
