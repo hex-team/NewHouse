@@ -182,8 +182,10 @@
         margin-bottom: 10px;
         width: 100%;
         z-index: 999;
+        position: absolute;
     }
-    .copyright {
+    .copyright,
+    .inner_content .copyright {
         float: none!important;
         width: 100%;
         text-align: center;
@@ -191,6 +193,7 @@
         left: 0!important;
         clear: both;
         bottom: 10px;
+        position: absolute;
     }
     .inner_project,
     .inner_about {
@@ -198,7 +201,7 @@
         margin-left: 11%;
     }
     .about_bottom {
-        margin-bottom: 20px;
+        margin-bottom: 80px;
     }
     .inner_blog {
         top: 120px;
@@ -206,9 +209,13 @@
         margin-left: 8%;
         margin-right: 8%;
     }
-    .control {
+    .blog_control {
         bottom: 100px;
         right: 5%;
+    }
+    .project_control {
+        bottom: 90px!important;
+        right: 8%!important;
     }
     .blog_list .title_holder {
         margin-top: 20px;
@@ -574,8 +581,11 @@
         margin-bottom: 10px;
         width: 100%;
         z-index: 999;
+        position: absolute;
+        bottom: 30px;
     }
-    .copyright {
+    .copyright,
+    .inner_content .copyright {
         float: none!important;
         width: 100%;
         text-align: center;
@@ -583,6 +593,7 @@
         left: 0!important;
         clear: both;
         bottom: 5px;
+        position: absolute;
     }
     .project_page {
         top: 150px;
