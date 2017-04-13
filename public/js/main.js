@@ -294,6 +294,7 @@ function GetSingleProject() {
     setTimeout(function () {
         $('.content').addClass('data_loaded');
         var $grid = $('.grid').imagesLoaded(function () {
+            $('#Loader').remove();
             $('#Gallery').css('opacity', '1');
             $grid.masonry({
                 itemSelector: '.grid-item',

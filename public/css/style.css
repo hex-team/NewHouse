@@ -53,6 +53,16 @@ body {
     transform: translate(-50%, -50%);
 }
 
+#Loader{
+    position: fixed;
+    left: 40%;
+    top: 50%;
+    -o-ms-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 .line_top {
     position: fixed;
     left: 0;

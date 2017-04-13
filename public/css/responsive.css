@@ -5,6 +5,10 @@
 ****************************/
 
 @media(max-width:815px) {
+    #Loader{
+        position: absolute;
+        left: 50%;
+    }
     .logo {
         width: 370px;
         top: 50%;
