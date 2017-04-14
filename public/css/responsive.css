@@ -214,8 +214,8 @@
         margin-right: 8%;
     }
     .blog_control {
-        bottom: 100px;
-        right: 5%;
+        bottom: 100px!important;
+        right: 5%!important;
     }
     .project_control {
         bottom: 90px!important;
