@@ -3,6 +3,12 @@
 *    Responsive Config 	    *
 *							*
 ****************************/
+@media(min-width:1600px){
+    .blog_list figure img{
+        min-height: 300px;
+        max-height: 300px;
+    }
+}
 
 @media(max-width:815px) {
     #Loader{

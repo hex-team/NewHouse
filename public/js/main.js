@@ -368,7 +368,6 @@ function GetBlogList() {
     setTimeout(function () {
         $('.content').append(template(data));
         ScrollSize = parseInt($('.blog_list li').outerHeight());
-        ScrollCount = data.length;
     }, 500);
 
     setTimeout(function () {
@@ -401,34 +400,30 @@ $(window).resize(function (e) {
 
 var ScrollValue = 0;
 var ScrollSize = 0;
-var CountDown = 1;
 
 $(document).on('click', '#UpArrow', function (e) {
-    event.preventDefault();
 
-    if ($('.inner_blog').scrollTop() !== 0 || $('.inner_blog').scrollTop() == ScrollSize) {
-
+    var Element = $('.inner_blog');
+    if (Element.scrollTop() !== 0 || Element.scrollTop() == ScrollSize) {
         ScrollValue = ScrollValue - ScrollSize;
-
-        $(".inner_blog").stop().animate({
+        Element.stop().animate({
             scrollTop: ScrollValue
         }, 300);
     }
-
-    if(CountDown > 1){
-        CountDown -= 1;
-    }
 });
 
-$(document).on('click', '#DownArrow', function (e) {    
+$(document).on('click', '#DownArrow', function (e) {
 
-    if(CountDown !== ScrollCount){
-        CountDown += 1;
+    var Element = $('.inner_blog');
+    if (Element.scrollTop() > 0 && (Element[0].scrollHeight - Element.scrollTop() == Element.outerHeight())) {
+        event.preventDefault();
+    }else{
         ScrollValue = ScrollValue + ScrollSize;
         $('.inner_blog').stop().animate({
             scrollTop: ScrollValue
         });
     }
+    
 });
 
 /****************************
