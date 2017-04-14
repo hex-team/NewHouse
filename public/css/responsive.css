@@ -622,8 +622,25 @@
     .project_list .caption h2 {
         font-size: 13px;
     }
+    .blog_list a{
+        display: block;
+        float: right;
+        margin-left: 30px;
+    }
     .blog_list figure img{
         max-height: 100px;
         min-height: 100px;
+    }
+    .blog_list h2{
+        font-size: 13px;
+        line-height: normal;
+    }
+    .blog_list h4,
+    .blog_list p{
+        font-size: 10px;
+    }
+    .blog_list p{
+        max-height: 50px;
+        overflow: hidden;
     }
 }
