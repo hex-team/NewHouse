@@ -421,7 +421,7 @@ $(document).on('click', '#DownArrow', function (e) {
         ScrollValue = ScrollValue + ScrollSize;
         $('.inner_blog').stop().animate({
             scrollTop: ScrollValue
-        });
+        },300);
     }
     
 });
