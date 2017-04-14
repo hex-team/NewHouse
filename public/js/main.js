@@ -368,6 +368,7 @@ function GetBlogList() {
     setTimeout(function () {
         $('.content').append(template(data));
         ScrollSize = parseInt($('.blog_list li').outerHeight());
+        ScrollCount = data.length;
     }, 500);
 
     setTimeout(function () {
@@ -400,6 +401,7 @@ $(window).resize(function (e) {
 
 var ScrollValue = 0;
 var ScrollSize = 0;
+var CountDown = 1;
 
 $(document).on('click', '#UpArrow', function (e) {
     event.preventDefault();
@@ -412,29 +414,21 @@ $(document).on('click', '#UpArrow', function (e) {
             scrollTop: ScrollValue
         }, 300);
     }
+
+    if(CountDown > 1){
+        CountDown -= 1;
+    }
 });
 
-$(document).on('click', '#DownArrow', function (e) {
-    // console.log(ScrollValue + ScrollSize);
+$(document).on('click', '#DownArrow', function (e) {    
 
-    // console.log($(".inner_blog")[0].clientHeight);
-
-    // if($('.blog_list')[0].scrollHeight - ScrollValue > ScrollSize ){
-
-    //     ScrollValue = ScrollValue + ScrollSize;
-
-    //     $(".inner_blog").animate({
-    //         scrollTop:  ScrollValue
-    //     },300);  
-    // }
-
-    ScrollValue = ScrollValue + ScrollSize;
-
-    $('.inner_blog').stop().animate({
-        scrollTop: ScrollValue
-    })
-
-
+    if(CountDown !== ScrollCount){
+        CountDown += 1;
+        ScrollValue = ScrollValue + ScrollSize;
+        $('.inner_blog').stop().animate({
+            scrollTop: ScrollValue
+        });
+    }
 });
 
 /****************************
