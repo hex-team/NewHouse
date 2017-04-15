@@ -261,6 +261,9 @@ function GetProject() {
     ];
 
     setTimeout(function () {
+        if($(window).width() <= 815){
+            $('html').addClass('inner_content');
+        }
         $('.content').append(template(data));
         $('.project_list').attr('data-page', 0);
     }, 500);
@@ -367,6 +370,9 @@ function GetBlogList() {
 
     setTimeout(function () {
         $('.content').append(template(data));
+        if($(window).width() <= 815){
+            $('html').addClass('inner_content');
+        }
         ScrollSize = parseInt($('.blog_list li').outerHeight());
     }, 500);
 
