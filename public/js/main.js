@@ -13,6 +13,7 @@ window.addEventListener('load', Load, !1);
 ****************************/
 
 function MainPageInit() {
+    $('html').addClass('show_copyright');
     $('html').removeClass('inner_content');
     $('.menu').addClass('hide_animation');
     $('.logo').addClass('hide_animation');
@@ -29,7 +30,7 @@ function MainPageInit() {
     }, 350);
     setTimeout(function () {
         $('.logo_img').removeClass('show_again');
-    }, 1900);
+    }, 3000);
 }
 
 /****************************
@@ -39,6 +40,7 @@ function MainPageInit() {
 ****************************/
 
 function InnerPageInit() {
+    $('html').removeClass('show_copyright');
     $('.menu li').removeClass('active');
     if ($('body').hasClass('main_page')) {
         $('body').removeClass('main_page');
@@ -261,9 +263,7 @@ function GetProject() {
     ];
 
     setTimeout(function () {
-        if($(window).width() <= 815){
-            $('html').addClass('inner_content');
-        }
+        $('html').addClass('inner_content');
         $('.content').append(template(data));
         $('.project_list').attr('data-page', 0);
     }, 500);
@@ -370,9 +370,7 @@ function GetBlogList() {
 
     setTimeout(function () {
         $('.content').append(template(data));
-        if($(window).width() <= 815){
-            $('html').addClass('inner_content');
-        }
+        $('html').addClass('inner_content');
         ScrollSize = parseInt($('.blog_list li').outerHeight());
     }, 500);
 

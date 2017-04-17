@@ -192,7 +192,9 @@
         margin-bottom: 10px;
         width: 100%;
         z-index: 999;
-        position: absolute;
+        position: relative;
+        bottom: 0;
+        clear: both;
     }
     .copyright,
     .inner_content .copyright {
@@ -202,8 +204,8 @@
         right: 0;
         left: 0!important;
         clear: both;
-        bottom: 10px;
-        position: absolute;
+        bottom: 0px;
+        position: relative;
     }
     .inner_project,
     .inner_about {
