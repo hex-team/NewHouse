@@ -112,35 +112,46 @@
         <!-- Project Inner Template -->
         <script id="InnerProject" type="text/x-handlebars-template">
             <div class="inner_project">
-                <div class="col-md-3 col-sm-12 col-xs-12">
-                    <div class="inner_project_header">
-                        <h2>{{title}}</h2>
-                        <h3>{{date}}</h3>
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="inner_project_header">
+                            <h2>{{title}}</h2>
+                            <h3>{{date}}</h3>
+                        </div>
+                        <div class="inner_project_description">
+                            <span>Location : {{location}}</span>
+                            <span>Client : {{client}}</span>
+                            <span>Architect : {{architect}}</span>
+                            <span>Structur AI Design : {{ai}}</span>
+                        </div>
                     </div>
-                    <div class="inner_project_content">
-                        <p>{{description}}</p>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="inner_project_content">
+                            <p>{{description}}</p>
+                        </div>
                     </div>
-                </div>
-                <svg version="1.1" id="Loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                    width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-                    <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
-                        transform="rotate(330 25 25)">
-                        <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
-                    </path>
-                </svg>
-                <div class="col-md-7 col-sm-12 col-xs-12" id="Gallery" style="opacity:0">
-                    <div class="project_cover">
-                        <a href="{{images.[0].source}}" data-lightbox="gallery" data-title="{{title}}">
-                            <img src="{{images.[0].source}}" alt="" class="img-responsive">
-                        </a>
-                    </div>
-                    <div class="grid">
-                        <div class="grid-sizer"></div>
-                        {{#images}}
-                            <a href="{{source}}" class="grid-item" data-lightbox="gallery" data-title="{{title}}">
-                                <img src="{{source}}" />
+                    <svg version="1.1" id="Loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                        <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+                            transform="rotate(330 25 25)">
+                            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animateTransform>
+                        </path>
+                    </svg>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="Gallery" style="opacity:0">
+                        <div class="project_cover">
+                            <a href="{{images.[0].source}}" data-lightbox="gallery" data-title="{{title}}">
+                                <img src="{{images.[0].source}}" alt="" class="img-responsive">
                             </a>
-                        {{/images}}
+                        </div>
+                        <div class="row">
+                            {{#images}}
+                                <div class="col-md-4 col-sm-12 col-xs-12 grid-col">
+                                    <a href="{{source}}" class="grid-item" data-lightbox="gallery" data-title="{{@root.title}}">
+                                        <img src="{{source}}" />
+                                    </a>
+                                </div>
+                            {{/images}}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,7 +199,6 @@
         </script>
 
         <script src="js/jquery.min.js"></script>
-        <script src="js/masonry.js"></script>
         <script src="js/imagesloaded.js"></script>
         <script src="js/handlebars.js"></script>
         <script src="js/lightbox.min.js"></script>
