@@ -1424,8 +1424,8 @@ body {
 ****************************/
 
 .inner_about {
-    margin-left: 14%;
-    margin-right: 14%;
+    margin-left: 17%;
+    margin-right: 0%;
     position: relative;
     padding-bottom: 50px;
 }
@@ -1508,7 +1508,7 @@ body {
 .about_bottom {
     float: right;
     width: 100%;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 
