@@ -226,33 +226,33 @@ function GetProject() {
     var data = [
         {
             image: 'data/photo_2017-01-29_14-44-15.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
             image: 'data/photo_2017-01-29_14-44-39.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
             image: 'data/photo_2017-01-29_14-44-33.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
             image: 'data/photo_2017-01-29_12-45-36.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
             image: 'data/photo_2017-01-29_11-59-02.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
             image: 'data/photo_2017-01-29_14-44-15.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         }
     ];
 
@@ -312,8 +312,8 @@ function GetAboutTemplate() {
         title: 'About Us',
         description:'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
         header: { source: 'data/about_1.jpg' },
-        images: [{ source: 'data/about_2.jpg', name: 'Mehdi Mohammadi Engineer', position: 'CEO' },
-        { source: 'data/about_3.jpg', name: 'Mehdi Mohammadi Engineer', position: 'CEO' }]
+        images: [{ source: 'data/about_2.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' },
+        { source: 'data/about_3.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' }]
     };
 
     setTimeout(function () {
