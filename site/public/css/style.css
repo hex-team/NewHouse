@@ -1263,7 +1263,7 @@ body {
 .inner_project .project_cover {
     position: relative;
     cursor: pointer;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .inner_project .project_cover a {
