@@ -184,29 +184,6 @@
     .grid-item {
         width: 48%;
     }
-    .social,
-    .inner_content .social {
-        right: 0;
-        left: 0;
-        text-align: center;
-        margin-bottom: 10px;
-        width: 100%;
-        z-index: 999;
-        position: relative;
-        bottom: 0;
-        clear: both;
-    }
-    .copyright,
-    .inner_content .copyright {
-        float: none!important;
-        width: 100%;
-        text-align: center;
-        right: 0;
-        left: 0!important;
-        clear: both;
-        bottom: 0px;
-        position: relative;
-    }
     .inner_project,
     .inner_about {
         margin-right: 5%;
@@ -215,21 +192,6 @@
     }
     .about_bottom {
         margin-bottom: 80px;
-    }
-    .inner_blog {
-        top: 25px;
-        bottom: 100px;
-        margin-left: 10%;
-        margin-right: 8%;
-        position: relative;
-        padding-bottom: 100px;
-        overflow: inherit;
-    }
-    .inner_blog:after{
-        display: none;
-    }
-    .blog_control {
-        display: none;
     }
     .project_control {
         display: none;
@@ -583,43 +545,7 @@
     .grid-item {
         width: 100%;
     }
-    .inner_blog {
-        top: 0;
-        position: relative;
-        bottom: 130px;
-        margin-right: 0%;
-    }
-    .inner_blog:after{
-        display: none;
-    }
-    .project_control{
-        display: none;
-    }
-    .blog_control{
-        display: none;
-    }
-    .social,
-    .inner_content .social {
-        right: 0;
-        left: 0;
-        text-align: center;
-        margin-bottom: 10px;
-        width: 100%;
-        z-index: 999;
-        position: absolute;
-        bottom: 30px;
-    }
-    .copyright,
-    .inner_content .copyright {
-        float: none!important;
-        width: 100%;
-        text-align: center;
-        right: 0;
-        left: 0!important;
-        clear: both;
-        bottom: 5px;
-        position: absolute;
-    }
+    
     .project_page {
         top: 0;
         position: relative;
@@ -633,26 +559,5 @@
     }
     .project_list .caption h2 {
         font-size: 13px;
-    }
-    .blog_list a{
-        display: block;
-        float: right;
-        margin-left: 30px;
-    }
-    .blog_list figure img{
-        max-height: 100px;
-        min-height: 100px;
-    }
-    .blog_list h2{
-        font-size: 13px;
-        line-height: normal;
-    }
-    .blog_list h4,
-    .blog_list p{
-        font-size: 10px;
-    }
-    .blog_list p{
-        max-height: 50px;
-        overflow: hidden;
     }
 }

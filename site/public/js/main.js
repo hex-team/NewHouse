@@ -164,9 +164,6 @@ function Load() {
         case "innerproject":
             return InnerPageInit(), ActiveMenu('#project'), GetSingleProject();
             break;
-        case "blog":
-            return InnerPageInit(), ActiveMenu('#blog'), GetBlogList();
-            break;
         case "about":
             return InnerPageInit(), ActiveMenu('#about'), GetAboutTemplate();
             break;
@@ -200,9 +197,6 @@ $(window).bind('hashchange', function () {
             break;
         case "innerproject":
             return InnerPageInit(), ActiveMenu('#project'), GetSingleProject();
-            break;
-        case "blog":
-            return InnerPageInit(), ActiveMenu('#blog'), GetBlogList();
             break;
         case "about":
             return InnerPageInit(), ActiveMenu('#about'), GetAboutTemplate();
@@ -332,53 +326,6 @@ function GetAboutTemplate() {
     }, 1200);
 };
 
-function GetBlogList() {
-    var source = $("#BlogPage").html();
-    var template = Handlebars.compile(source);
-
-    var data = [
-        {
-            image: 'data/photo_2017-01-29_14-44-15.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'data/photo_2017-01-29_14-44-39.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'data/photo_2017-01-29_14-44-33.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'data/photo_2017-01-29_12-45-36.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        }, {
-            image: 'data/photo_2017-01-29_11-59-02.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        }
-    ];
-
-    setTimeout(function () {
-        $('.content').append(template(data));
-        $('html').addClass('inner_content');
-        ScrollSize = parseInt($('.blog_list li').outerHeight());
-    }, 500);
-
-    setTimeout(function () {
-        $('.content').addClass('data_loaded');
-    }, 1200);
-};
-
 function ShowUnderconsideration() {
     $('.content').addClass('data_loaded');
     $('.content').html('<p class="alert">این قسمت در دست ساخت است.</p>');
@@ -394,40 +341,6 @@ function CheckForWidth() {
 }
 
 $(window).resize(function (e) {
-});
-
-/****************************
-*							*
-*      Blog Scroll Event    * 
-*							*
-****************************/
-
-var ScrollValue = 0;
-var ScrollSize = 0;
-
-$(document).on('click', '#UpArrow', function (e) {
-
-    var Element = $('.inner_blog');
-    if (Element.scrollTop() !== 0 || Element.scrollTop() == ScrollSize) {
-        ScrollValue = ScrollValue - ScrollSize;
-        Element.stop().animate({
-            scrollTop: ScrollValue
-        }, 300);
-    }
-});
-
-$(document).on('click', '#DownArrow', function (e) {
-
-    var Element = $('.inner_blog');
-    if (Element.scrollTop() > 0 && (Element[0].scrollHeight - Element.scrollTop() == Element.outerHeight())) {
-        event.preventDefault();
-    }else{
-        ScrollValue = ScrollValue + ScrollSize;
-        $('.inner_blog').stop().animate({
-            scrollTop: ScrollValue
-        },300);
-    }
-    
 });
 
 /****************************
