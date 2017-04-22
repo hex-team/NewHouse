@@ -1767,7 +1767,7 @@ body {
 }
 
 .project_list [class*=' col-'] {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     display: inline-block;
     float: none;
     width: 29%;
