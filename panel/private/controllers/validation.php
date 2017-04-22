@@ -30,7 +30,7 @@
 		public static function get ($_allowedParams = [], $_sanitize = true)
 		{
 			$allowedParams = [];
-
+return $_GET;
 			foreach ($_allowedParams as $param) if (isset($_GET[$param]))
 			{
 				if ($_sanitize) $allowedParams[$param] = self::sanitizeValue($_GET[$param]);

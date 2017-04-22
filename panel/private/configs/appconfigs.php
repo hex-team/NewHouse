@@ -37,12 +37,17 @@
 	define('MAX_TITLE_LENGTH', 32);
 	define('MAX_BODY_LENGTH', 384);
 	define('MAX_IMAGE_SIZE', 2048);
+	define('MAX_USERNAME_LENGTH', 32);
+	define('MAX_USERNAME_LENGTH', 32);
 	define('RESULT_COUNT_PER_REQUEST', 6);
 	define('NOW', date('Y/m/d H:i:s'));
 	define('EMAIL_VALIDATOR', '/^[\w\.\-]{1,64}\@[\w\.\-]{1,184}\.[a-zA-Z0-9]{1,4}$/');
 	define('DELIMITER', ',');
-	define('APPLICATION_TITLE', 'Golab');
+	define('APPLICATION_TITLE', 'Next House');
 	define('CSRF_TOKEN_LENGTH', 32);
+	define('LOGIN_TOKEN_LENGTH', 32);
+	define('TOKEN_SECRET', 'aaaaaaaaaa');
+	define('LOGIN_TIMEOUT', 1800);
 	define('API_PREFIX', '_API');
 	define('CHARSET', 'UTF-8');
 	define('TIME_ZONE', 'Asia/Tehran');
@@ -71,17 +76,11 @@
 	define('A_LOG_FILE', APP_ROOT_PATH . 'a_log.log');
 
 	// Registered APIs
-	define('SEARCH_API', APIS_PATH . 'search.php');
-	define('GET_CONTENT_API', APIS_PATH . 'content.php');
-	define('SEND_REPORT_API', APIS_PATH . 'report.php');
-	define('ADD_CONTENT_API', APIS_PATH . 'add.php');
+	define('LOGIN_API', APIS_PATH . 'login.php');
 
 	// APIs Allowed Parameters
 	define('API_PARAMS', 'api');
-	define('SEARCH_PARAMS', 'q,page');
-	define('GET_CONTENT_PARAMS', 'pid');
-	define('SEND_REPORT_PARAMS', 'pid,body,email');
-	define('ADD_CONTENT_PARAMS', 'title,body,date,image,tags,reference,email');
+	define('LOGIN_PARAMS', 'username,password');
 
 	// Messages
 	define('DB_CONNECTION_MSG', 'Database Connection Error');
@@ -105,9 +104,9 @@
 	define('DB_ChARSET', 'utf8');
 
 	// Databases
-	define('DB_DATA', '');
-	define('DB_LOG', '');
+	define('DB_DATA', 'nexthouse');
+	define('DB_LOG', 'logs');
 
 	// Tables
-	define('TBL_LOGS', 'tbl_logs');
+	define('TBL_USERS', 'users');
 ?>

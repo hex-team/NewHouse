@@ -1,0 +1,2 @@
+RewriteBase /
+RewriteRule ^panel\/api\/login\/(.+)\/(.+)$ panel/public/api.php?api=login&username=$1&password=$2 [L,NC]
