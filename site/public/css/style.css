@@ -1182,15 +1182,15 @@ body {
 }
 
 .inner_project_header {
-    text-align: right;
+    text-align: left;
     position: relative;
-    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .inner_project_header:before {
     content: '';
     position: absolute;
-    right: 0;
+    left: 0;
     width: 5px;
     height: 100%;
     top: 0;
@@ -1204,7 +1204,7 @@ body {
     font-family: "IRANSANS BOLD";
     margin: 0;
     margin-bottom: 10px;
-    line-height: 1;
+    line-height: normal;
 }
 
 .inner_project_header h3 {
@@ -1217,7 +1217,6 @@ body {
     font-size: 14px;
     color: #999999;
     text-align: justify;
-    direction: rtl;
 }
 
 .inner_project .project_cover {
