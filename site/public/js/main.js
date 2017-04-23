@@ -164,9 +164,6 @@ function Load() {
         case "innerproject":
             return InnerPageInit(), ActiveMenu('#project'), GetSingleProject();
             break;
-        case "blog":
-            return InnerPageInit(), ActiveMenu('#blog'), GetBlogList();
-            break;
         case "about":
             return InnerPageInit(), ActiveMenu('#about'), GetAboutTemplate();
             break;
@@ -201,9 +198,6 @@ $(window).bind('hashchange', function () {
         case "innerproject":
             return InnerPageInit(), ActiveMenu('#project'), GetSingleProject();
             break;
-        case "blog":
-            return InnerPageInit(), ActiveMenu('#blog'), GetBlogList();
-            break;
         case "about":
             return InnerPageInit(), ActiveMenu('#about'), GetAboutTemplate();
             break;
@@ -231,34 +225,34 @@ function GetProject() {
 
     var data = [
         {
-            image: 'public/data/photo_2017-01-29_14-44-15.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_14-44-15.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
-            image: 'public/data/photo_2017-01-29_14-44-39.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_14-44-39.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
-            image: 'public/data/photo_2017-01-29_14-44-33.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_14-44-33.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
-            image: 'public/data/photo_2017-01-29_12-45-36.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_12-45-36.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
-            image: 'public/data/photo_2017-01-29_11-59-02.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_11-59-02.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         },
         {
-            image: 'public/data/photo_2017-01-29_14-44-15.jpg',
-            title: 'پروژه مسکونی کـژال',
-            date: 'تهــران ۱۳۸۶'
+            image: 'data/photo_2017-01-29_14-44-15.jpg',
+            title: 'Kajal Residential Project',
+            date: 'Tehran 1386'
         }
     ];
 
@@ -279,14 +273,18 @@ function GetSingleProject() {
     var template = Handlebars.compile(source);
 
     var data = {
-        title: 'پروژه مسکونی کـژال',
-        date: 'تهــران ۱۳۸۶',
-        description: 'پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.                    پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.                     باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.                     به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.                     اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد.                     به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.',
-        images: [{ source: 'public/data/photo_2017-01-29_14-44-15.jpg' },
-        { source: 'public/data/photo_2017-01-29_14-44-33.jpg' },
-        { source: 'public/data/photo_2017-01-29_14-44-39.jpg' },
-        { source: 'public/data/photo_2017-01-29_12-45-36.jpg' },
-        { source: 'public/data/photo_2017-01-29_11-59-02.jpg' }]
+        title: 'Kajal Residential Project',
+        date: 'Tehran 1386',
+        location: 'North Dibaji',
+        client: 'Babak Sedaghat Kamal , Sepehr Oshagh',
+        architect: 'Hootan Karoobe',
+        ai: 'Hooman Faridi',
+        description: 'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
+        images: [{ source: 'data/photo_2017-01-29_14-44-15.jpg' },
+        { source: 'data/photo_2017-01-29_14-44-33.jpg' },
+        { source: 'data/photo_2017-01-29_14-44-39.jpg' },
+        { source: 'data/photo_2017-01-29_12-45-36.jpg' },
+        { source: 'data/photo_2017-01-29_11-59-02.jpg' }]
     };
 
     setTimeout(function () {
@@ -296,16 +294,8 @@ function GetSingleProject() {
 
     setTimeout(function () {
         $('.content').addClass('data_loaded');
-        var $grid = $('.grid').imagesLoaded(function () {
-            $('#Loader').remove();
-            $('#Gallery').css('opacity', '1');
-            $grid.masonry({
-                itemSelector: '.grid-item',
-                percentPosition: true,
-                gutter: 10,
-                columnWidth: '.grid-sizer'
-            });
-        });
+        $('#Loader').remove();
+        $('#Gallery').css('opacity', '1');
     }, 1200);
 };
 
@@ -315,63 +305,16 @@ function GetAboutTemplate() {
     var template = Handlebars.compile(source);
 
     var data = {
-        title: 'دربـاره مـا',
-        description: 'پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم. باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند. به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود. اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد. به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.  باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند. به این فکرکنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود.  اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد. به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.پول هدف اصلی همه‌ی کسب و کارهاست. اگر پولی نتوانیم از مشتری دریافت کنیم عملاً انگار کسب و کاری نداریم.  باید دنبال پول مشتریان خود باشیم. پولی که به اندازه‌ای باشد که به ما منفعت برساند. هزینه‌های ما را پوشش داده و سرمایه‌ای برای ما اندوخته کند.  به این فکر کنید که یک سازنده، پول خودش را که با هزار زحمت به دست آورده، چگونه خرج می‌کند. کار سختیه! می‌دونم. به این راحتی نمیشه از سازنده‌ها پول دریافت کرد؛ اونم تو این بازار رکود. اما در نهایت این سازنده باید پروژه ساختمانی خودش را به انجام برساند و حتماً خریدهای خود را انجام دهد. به این فکر کنید چگونه می‌توانید این شما باشید که از او پول دریافت می‌کنید.',
-        header: { source: 'public/data/about_1.jpg' },
-        images: [{ source: 'public/data/about_2.jpg', name: ' مهندس مهـدی محمـدی', position: 'مدیر عـامل' },
-        { source: 'public/data/about_3.jpg', name: ' مهندس مهـدی محمـدی', position: 'مدیر عـامل' }]
+        title: 'About Us',
+        description:'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
+        header: { source: 'data/about_1.jpg' },
+        images: [{ source: 'data/about_2.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' },
+        { source: 'data/about_3.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' }]
     };
 
     setTimeout(function () {
         $('html').addClass('inner_content');
         $('.content').append(template(data));
-    }, 500);
-
-    setTimeout(function () {
-        $('.content').addClass('data_loaded');
-    }, 1200);
-};
-
-function GetBlogList() {
-    var source = $("#BlogPage").html();
-    var template = Handlebars.compile(source);
-
-    var data = [
-        {
-            image: 'public/data/photo_2017-01-29_14-44-15.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'public/data/photo_2017-01-29_14-44-39.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'public/data/photo_2017-01-29_14-44-33.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        },
-        {
-            image: 'public/data/photo_2017-01-29_12-45-36.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        }, {
-            image: 'public/data/photo_2017-01-29_11-59-02.jpg',
-            title: 'اعلام نتایج جایزه جهانی Architizer A + Awards 2017',
-            date: 'چهارشنبه, فروردین ۲۳, ۱۳۹۶',
-            description: 'جایزه جهانی ARCHITIZER در میان مسابقات بین المللی که به شکلی اختصاصی مربوط به معماری هستند، یکی از معتبرترین آنهاست که هرساله در آمریکا برگزار میگردد و در بیش از یکصد زیر شاخه معماری اعلان فراخوان میکند و معماران از سراسر دنیا پروژه های خود را به این مسابقه می فرستند. ماه گذشته در معمارنیوز، پیرو خبری با عنوان «پروژه هایی از ایران در فینال جایزه جهانی Architizer A + Awards 2017» لیست پروژه هایی که از ایران که به مرحله فینال راه یافتند و در بخش های مختلف این رقابت کاندید شده بودند، جهت رأی گیری اعلام گردید. حال بنا بر اعلام سایت مرجع برگزاری مسابقات معماری آرکیتایزر؛ نتایج این دوره نیز مشخص گردید و پروژه های زیر از ایران، ... '
-        }
-    ];
-
-    setTimeout(function () {
-        $('.content').append(template(data));
-        $('html').addClass('inner_content');
-        ScrollSize = parseInt($('.blog_list li').outerHeight());
     }, 500);
 
     setTimeout(function () {
@@ -394,40 +337,6 @@ function CheckForWidth() {
 }
 
 $(window).resize(function (e) {
-});
-
-/****************************
-*							*
-*      Blog Scroll Event    * 
-*							*
-****************************/
-
-var ScrollValue = 0;
-var ScrollSize = 0;
-
-$(document).on('click', '#UpArrow', function (e) {
-
-    var Element = $('.inner_blog');
-    if (Element.scrollTop() !== 0 || Element.scrollTop() == ScrollSize) {
-        ScrollValue = ScrollValue - ScrollSize;
-        Element.stop().animate({
-            scrollTop: ScrollValue
-        }, 300);
-    }
-});
-
-$(document).on('click', '#DownArrow', function (e) {
-
-    var Element = $('.inner_blog');
-    if (Element.scrollTop() > 0 && (Element[0].scrollHeight - Element.scrollTop() == Element.outerHeight())) {
-        event.preventDefault();
-    }else{
-        ScrollValue = ScrollValue + ScrollSize;
-        $('.inner_blog').stop().animate({
-            scrollTop: ScrollValue
-        },300);
-    }
-    
 });
 
 /****************************
