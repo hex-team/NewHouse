@@ -17,6 +17,15 @@
 				'last_name' => $_lastname]);
 		}
 
+		public function authenticate ($_username, $_password)
+		{
+			$where = 'username = \'' . $_username . '\' AND password = \'' . md5($_password) . '\'';
+			$result = parent::_select(['id'], $where);
+			$fetchedResult = $result -> fetch(PDO::FETCH_ASSOC);
+
+			return $fetchedResult;
+		}
+
 		public function get ($_user = null)
 		{
 			$where = null;
