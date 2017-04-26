@@ -20,7 +20,7 @@
 		public function authenticate ($_username, $_password)
 		{
 			$where = 'username = \'' . $_username . '\' AND password = \'' . md5($_password) . '\'';
-			$result = parent::_select(['id'], $where);
+			$result = parent::_select(['*'], $where);
 			$fetchedResult = $result -> fetch(PDO::FETCH_ASSOC);
 
 			return $fetchedResult;

@@ -21,6 +21,8 @@
 		{
 			http_response_code(OK);
 
+			if (!$_value) http_response_code(NOT_FOUND);
+
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ACTIONS))
 			{
 				$log = new Log();

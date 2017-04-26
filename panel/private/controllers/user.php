@@ -13,9 +13,9 @@
 		{
 			$user = $this -> login -> authenticate($_params['username'], $_params['password']);
 
-			if ($user != null) $result = $this -> authorize($user);
+			if ($user != null) 	return ['token' => $this -> authorize($user)];
 
-			return ['token' => $result];
+			return false;
 		}
 
 		public function authorize ($_user)

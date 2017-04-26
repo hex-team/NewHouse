@@ -5,6 +5,7 @@
 
 	define('SERVER_ERROR', 500);
 	define('BAD_REQUEST', 400);
+	define('NOT_FOUND', 404);
 	define('OK', 200);
 
 	define('DENIED', 0);
@@ -38,7 +39,7 @@
 	define('MAX_BODY_LENGTH', 384);
 	define('MAX_IMAGE_SIZE', 2048);
 	define('MAX_USERNAME_LENGTH', 32);
-	define('MAX_USERNAME_LENGTH', 32);
+	define('MAX_PASSWORD_LENGTH', 32);
 	define('RESULT_COUNT_PER_REQUEST', 6);
 	define('NOW', date('Y/m/d H:i:s'));
 	define('EMAIL_VALIDATOR', '/^[\w\.\-]{1,64}\@[\w\.\-]{1,184}\.[a-zA-Z0-9]{1,4}$/');

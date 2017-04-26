@@ -13,7 +13,7 @@
 
 			$zeros = substr($_token, strlen($_token) - 1, 1);
 
-			$useridLen = 10 - $zeros;
+			$useridLen = 9 - $zeros;
 
 			if (strlen($_token) > 129 + $useridLen)
 			{
@@ -42,7 +42,7 @@
 
 			if ($_expiration != null) $_expiration = time() + $_expiration;
 
-			$zeros = 10 - strlen($_userid);
+			$zeros = 9 - strlen($_userid);
 			$token = $salt . $_expiration . $origin . $_userid . $zeros;
 
 			return $token;
