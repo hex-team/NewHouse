@@ -8,12 +8,12 @@
 		header('Access-Control-Allow-Origin: *');
 
 		$allowedParams = explode(DELIMITER, API_PARAMS);
-		$err = Validation::requiredOnGet($allowedParams);
+		$err = Validation::requiredOnPost($allowedParams);
 
 		if (!empty($err)) throw new Exception(API_PARAMETERS_MSG . ' (' . implode(DELIMITER, $err) . ')');
 
-		$get = Validation::get($allowedParams);
-		$api = strtoupper($get[$allowedParams[0]]) . API_PREFIX;
+		$post = Validation::post($allowedParams);
+		$api = strtoupper($post[$allowedParams[0]]) . API_PREFIX;
 
 		if (!@include_once constant($api)) throw new Exception(API_MSG . ' (' . $api . ')');
 	}
