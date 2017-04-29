@@ -4,7 +4,7 @@
 	try
 	{
 		header('Content-Type: application/json; charset=' . CHARSET);
-		header('Access-Control-Allow-Methods: GET, POST, PUT');
+		header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 		header('Access-Control-Allow-Origin: *');
 
 		$allowedParams = explode(DELIMITER, API_PARAMS);
