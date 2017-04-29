@@ -5,25 +5,33 @@
 
 		public function __construct ()
 		{
-			$this -> login = new TblUsers();
+			$this -> user = new TblUsers();
 			$this -> token = new Token();
 		}
 
 		public function login ($_params)
 		{
-			$user = $this -> login -> authenticate($_params['username'], $_params['password']);
+			$user = $this -> user -> authenticate($_params['username'], $_params['password']);
 
-			if ($user != null) return ['token' => $this -> authorize($user)];
+			if ($user != null)
+			{
+				if (Token::verify($user['token'])) $token = $user['token'];
+				else $token = Token::generate($user['id'], LOGIN_TIMEOUT);
+			}
+
+			if ($this -> user -> update($user['id'], ['token' => $token, 'last_login' => NOW])) return ['token' => $token];
 
 			return false;
 		}
 
-		public function authorize ($_user)
+		public function logout ($_params)
 		{
-			if ($_user['token'] != null && Token::verify($_user['id'], $_user['token'], TOKEN_SECRET)) $token = $_user['token'];
-			else $token = Token::generate($_user['id'], TOKEN_SECRET, LOGIN_TIMEOUT);
+			if (Token::verify($_params['token']))
+			{
+				$userid = Token::parse($_params['token'])['userid'];
 
-			if ($this -> login -> update($_user['id'], ['token' => $token])) return $token;
+				if ($this -> user -> update($userid, ['token' => null])) return true;
+			}
 
 			return false;
 		}
