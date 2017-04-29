@@ -21,7 +21,7 @@
 		{
 			http_response_code(OK);
 
-			if (!$_value) http_response_code(NOT_FOUND);
+			if (!$_value) http_response_code(BAD_REQUEST);
 
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ACTIONS))
 			{
@@ -39,7 +39,7 @@
 		public static function handleExceptions ($_exception, $_logLocation = DB)
 		{
 			http_response_code(SERVER_ERROR);
-var_dump($_exception);
+
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ERRORS))
 			{
 				$log = new Log();
