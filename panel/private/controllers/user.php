@@ -13,7 +13,7 @@
 		{
 			$user = $this -> login -> authenticate($_params['username'], $_params['password']);
 
-			if ($user != null) 	return ['token' => $this -> authorize($user)];
+			if ($user != null) return ['token' => $this -> authorize($user)];
 
 			return false;
 		}

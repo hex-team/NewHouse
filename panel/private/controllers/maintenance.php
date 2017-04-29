@@ -39,6 +39,7 @@
 		public static function handleExceptions ($_exception, $_logLocation = DB)
 		{
 			http_response_code(SERVER_ERROR);
+var_dump($_exception);
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ERRORS))
 			{
 				$log = new Log();
