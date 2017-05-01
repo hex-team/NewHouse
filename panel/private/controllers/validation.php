@@ -43,7 +43,7 @@
 		public static function header ($_allowedParams = [], $_sanitize = true)
 		{
 			$allowedParams = [];
-			$headers = getallheaders();
+			$headers = !function_exists('getallheaders') ? getallheaders() : Common::getallheaders();
 
 			foreach ($_allowedParams as $param) if (isset($headers[$param]))
 			{
@@ -84,7 +84,7 @@
 		public static function requiredOnHeader ($_requiredFields)
 		{
 			$errors = [];
-			$headers = getallheaders();
+			$headers = !function_exists('getallheaders') ? getallheaders() : Common::getallheaders();
 
 			foreach ($_requiredFields as $field) if (!isset($headers[$field]) || trim($headers[$field]) === '') $errors[$field] = $field . ' ' . BLANK_FIELD_MSG;
 
