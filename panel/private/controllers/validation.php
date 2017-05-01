@@ -30,11 +30,25 @@
 		public static function get ($_allowedParams = [], $_sanitize = true)
 		{
 			$allowedParams = [];
-return $_GET;
+
 			foreach ($_allowedParams as $param) if (isset($_GET[$param]))
 			{
 				if ($_sanitize) $allowedParams[$param] = self::sanitizeValue($_GET[$param]);
 				else $allowedParams[$param] = $_GET[$param];
+			}
+
+			return $allowedParams;
+		}
+
+		public static function header ($_allowedParams = [], $_sanitize = true)
+		{
+			$allowedParams = [];
+			$headers = getallheaders();
+
+			foreach ($_allowedParams as $param) if (isset($headers[$param]))
+			{
+				if ($_sanitize) $allowedParams[$param] = self::sanitizeValue($headers[$param]);
+				else $allowedParams[$param] = $headers[$param];
 			}
 
 			return $allowedParams;
@@ -63,6 +77,16 @@ return $_GET;
 			$errors = [];
 
 			foreach ($_requiredFields as $field) if (!isset($_GET[$field]) || trim($_GET[$field]) === '') $errors[$field] = $field . ' ' . BLANK_FIELD_MSG;
+
+			return $errors;
+		}
+
+		public static function requiredOnHeaders ($_requiredFields)
+		{
+			$errors = [];
+			$headers = getallheaders();
+
+			foreach ($_requiredFields as $field) if (!isset($headers[$field]) || trim($headers[$field]) === '') $errors[$field] = $field . ' ' . BLANK_FIELD_MSG;
 
 			return $errors;
 		}

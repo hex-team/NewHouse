@@ -1,12 +1,13 @@
 <?php
-	require_once '../private/initialize.php';
+	require_once '../initialize.php';
 
 	try
 	{
-		header('Content-Type: application/json; charset=' . CHARSET);
-		header('Access-Control-Allow-Headers: Authorization, Content-Type');
-		header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
 		header('Access-Control-Allow-Origin: *');
+		header('Access-Control-Allow-Credentials: true');
+		header('Access-Control-Allow-Methods: OPTIONS, GET, POST');
+		header('Access-Control-Allow-Headers: Content-Type, User-Agent, Cache-Control');
+		header('Content-Type: application/json; charset=' . CHARSET);
 
 		$allowedParams = explode(DELIMITER, API_PARAMS);
 		$err = Validation::requiredOnGet($allowedParams);
@@ -20,6 +21,8 @@
 	}
 	catch (Exception $ex)
 	{
+		http_response_code(BAD_REQUEST);
+
 		Maintenance::handleApiErrors($ex);
 	}
 ?>

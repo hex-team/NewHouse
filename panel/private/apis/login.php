@@ -8,9 +8,13 @@
 
 	$post[$allowedParams[0]] = substr($post[$allowedParams[0]], 0, MAX_USERNAME_LENGTH);
 	$post[$allowedParams[1]] = substr($post[$allowedParams[1]], 0, MAX_PASSWORD_LENGTH);
+
 	$obj = new User();
 
 	$result = $obj -> login($post);
+
+	if (empty($result['token'])) http_response_code(BAD_REQUEST);
+	else http_response_code(OK);
 
 	Maintenance::handleApiActions((empty($result['token']) ? REQUEST_MSG : REQUEST_SUCCESSFULL_MSG), $result);
 ?>

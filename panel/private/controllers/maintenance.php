@@ -3,8 +3,6 @@
 	{
 		public static function handleApiErrors ($_exception)
 		{
-			http_response_code(BAD_REQUEST);
-
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ERRORS))
 			{
 				$log = new Log();
@@ -19,10 +17,6 @@
 
 		public static function handleApiActions ($_message, $_value)
 		{
-			http_response_code(OK);
-
-			if (!$_value) http_response_code(BAD_REQUEST);
-
 			if (!MAINTENANCE_MODE || (MAINTENANCE_MODE && LOG_ACTIONS))
 			{
 				$log = new Log();

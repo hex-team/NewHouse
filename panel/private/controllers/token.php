@@ -41,7 +41,7 @@
 			else if (strlen($_token) > 139 + $useridLen)
 			{
 				$origin = substr($_token, strlen($_token) - 74, 64);
-				$expiration =  substr($_token, strlen($_token) - $useridLen - 75);
+				$expiration = substr($_token, strlen($_token) - $useridLen - 75);
 			}
 
 			return ['userid' => $userid, 'origin' => $origin, 'expiration' => $expiration];
