@@ -1,0 +1,3 @@
+RewriteBase /
+RewriteRule ^api\/login$ apihndlr.php?api=login [L,NC]
+RewriteRule ^api\/logout$ apihndlr.php?api=logout [L,NC]
