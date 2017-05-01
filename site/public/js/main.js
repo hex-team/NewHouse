@@ -1,19 +1,129 @@
 /****************************
-*							*
-*      Load Config 			*
-*							*
-****************************/
+ *							*
+ *      Load Config 			*
+ *							*
+ ****************************/
 
 window.addEventListener('load', Load, !1);
 
 /****************************
-*							*
-*      Main Page Config     *
-*							*
-****************************/
+ *							*
+ *      Main Page Config     *
+ *							*
+ ****************************/
+particlesJS('particles-js', {
+    "particles": {
+        "number": {
+            "value": 160,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+        },
+        "color": {
+            "value": "#bebebe"
+        },
+        "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            },
+            "polygon": {
+                "nb_sides": 5
+            },
+            "image": {
+                "src": "img/github.svg",
+                "width": 100,
+                "height": 100
+            }
+        },
+        "opacity": {
+            "value": 1,
+            "random": true,
+            "anim": {
+                "enable": true,
+                "speed": 1,
+                "opacity_min": 0,
+                "sync": false
+            }
+        },
+        "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 4,
+                "size_min": 0.3,
+                "sync": false
+            }
+        },
+        "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+        },
+        "move": {
+            "enable": true,
+            "speed": 19.24094473038627,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+                "enable": false,
+                "rotateX": 600,
+                "rotateY": 600
+            }
+        }
+    },
+    "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+            "onhover": {
+                "enable": true,
+                "mode": "bubble"
+            },
+            "onclick": {
+                "enable": true,
+                "mode": "repulse"
+            },
+            "resize": true
+        },
+        "modes": {
+            "grab": {
+                "distance": 400,
+                "line_linked": {
+                    "opacity": 1
+                }
+            },
+            "bubble": {
+                "distance": 250,
+                "size": 0,
+                "duration": 2,
+                "opacity": 0,
+                "speed": 3
+            },
+            "repulse": {
+                "distance": 400,
+                "duration": 0.4
+            },
+            "push": {
+                "particles_nb": 4
+            },
+            "remove": {
+                "particles_nb": 2
+            }
+        }
+    },
+    "retina_detect": true
+});
+
 
 function MainPageInit() {
-    $('html').addClass('show_copyright');
     $('html').removeClass('inner_content');
     $('.menu').addClass('hide_animation');
     $('.logo').addClass('hide_animation');
@@ -34,13 +144,12 @@ function MainPageInit() {
 }
 
 /****************************
-*							*
-*      Inner Page Config 	*
-*							*
-****************************/
+ *							*
+ *      Inner Page Config 	*
+ *							*
+ ****************************/
 
 function InnerPageInit() {
-    $('html').removeClass('show_copyright');
     $('.menu li').removeClass('active');
     if ($('body').hasClass('main_page')) {
         $('body').removeClass('main_page');
@@ -60,10 +169,10 @@ function InnerPageInit() {
 }
 
 /****************************
-*							*
-*      Menu Click Event 	*
-*							*
-****************************/
+ *							*
+ *      Menu Click Event 	*
+ *							*
+ ****************************/
 
 $(document).on('click', '.menu li a', function (event) {
 
@@ -103,10 +212,10 @@ $(document).on('click', '#CloseMenu', function (event) {
 });
 
 /****************************
-*							*
-*   Inner Menu Click Event  *
-*							*
-****************************/
+ *							*
+ *   Inner Menu Click Event  *
+ *							*
+ ****************************/
 
 $(document).on('click', '.menu li div.inner_menu', function (event) {
 
@@ -122,10 +231,10 @@ $(document).on('click', '.menu li div.inner_menu', function (event) {
 });
 
 /****************************
-*							*
-*   Loaded Menu Event       *
-*							*
-****************************/
+ *							*
+ *   Loaded Menu Event       *
+ *							*
+ ****************************/
 
 function ActiveMenu(href) {
     $('.menu li').each(function () {
@@ -136,10 +245,10 @@ function ActiveMenu(href) {
 }
 
 /****************************
-*							*
-*      Route Config 	    *
-*							*
-****************************/
+ *							*
+ *      Route Config 	    *
+ *							*
+ ****************************/
 
 function Load() {
 
@@ -176,10 +285,10 @@ function Load() {
 }
 
 /****************************
-*							*
-*   Catch Hash Event       *
-*							*
-****************************/
+ *							*
+ *   Catch Hash Event       *
+ *							*
+ ****************************/
 
 $(window).bind('hashchange', function () {
 
@@ -213,18 +322,17 @@ $(window).bind('hashchange', function () {
 });
 
 /****************************
-*							*
-*      Get Page Data        * 
-*							*
-****************************/
+ *							*
+ *      Get Page Data        * 
+ *							*
+ ****************************/
 
 function GetProject() {
 
     var source = $("#ProjectPage").html();
     var template = Handlebars.compile(source);
 
-    var data = [
-        {
+    var data = [{
             image: 'data/photo_2017-01-29_14-44-15.jpg',
             title: 'Kajal Residential Project',
             date: 'Tehran 1386'
@@ -280,11 +388,22 @@ function GetSingleProject() {
         architect: 'Hootan Karoobe',
         ai: 'Hooman Faridi',
         description: 'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
-        images: [{ source: 'data/photo_2017-01-29_14-44-15.jpg' },
-        { source: 'data/photo_2017-01-29_14-44-33.jpg' },
-        { source: 'data/photo_2017-01-29_14-44-39.jpg' },
-        { source: 'data/photo_2017-01-29_12-45-36.jpg' },
-        { source: 'data/photo_2017-01-29_11-59-02.jpg' }]
+        images: [{
+                source: 'data/photo_2017-01-29_14-44-15.jpg'
+            },
+            {
+                source: 'data/photo_2017-01-29_14-44-33.jpg'
+            },
+            {
+                source: 'data/photo_2017-01-29_14-44-39.jpg'
+            },
+            {
+                source: 'data/photo_2017-01-29_12-45-36.jpg'
+            },
+            {
+                source: 'data/photo_2017-01-29_11-59-02.jpg'
+            }
+        ]
     };
 
     setTimeout(function () {
@@ -306,10 +425,21 @@ function GetAboutTemplate() {
 
     var data = {
         title: 'About Us',
-        description:'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
-        header: { source: 'data/about_1.jpg' },
-        images: [{ source: 'data/about_2.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' },
-        { source: 'data/about_3.jpg', name: 'Eng.Mehdi Mohammadi', position: 'CEO' }]
+        description: 'Lorem ipsum dolor sit amet, quisque ipsum massa augue in nulla. Maecenas dui lorem dolor interdum in etiam. Euismod consectetuer imperdiet odio, nostrum viverra eu molestie amet id, ac mattis quis mi enim curabitur in, eget vestibulum erat nostra rhoncus sed laoreet. Tellus sed, a et ultrices libero ultricies dui, nulla id et, aliquet et felis tortor id dignissim nec. Ut wisi sit at beatae nullam, sed egestas in, turpis vestibulum etiam, lectus aliquam. Tincidunt vestibulum non natoque nonummy sit, etiam orci ullamcorper tempus nibh vivamus nunc, ornare interdum praesent. Suspendisse sed at euismod eget, imperdiet integer vehicula diam wisi magna sed, libero sociis a dolor, quisque eget, rhoncus vestibulum at feugiat augue. Nunc non velit suspendisse porttitor elementum, nam quisque pellentesque curae ornare, in iaculis. Sed tincidunt, proin cum, parturient eu sodales ut. Volutpat mi libero. Consequat non auctor dis ut pharetra vitae. Rutrum lectus commodo venenatis tristique sollicitudin nam, dui magna risus. Vitae ad adipiscing justo non ante in, velit suspendisse proin pellentesque mi faucibus, parturient neque enim. Libero bibendum arcu tellus dapibus, parturient et. Non eu vestibulum placerat, eu morbi nunc donec, aliquam vitae a praesent blandit, euismod et curabitur, euismod ridiculus proin erat. Ullamco elementum elementum, quis maecenas accumsan nonummy in, sem luctus lacinia sollicitudin accumsan ligula fringilla, mollis nullam donec volutpat ante eleifend dui, sed lectus varius etiam purus arcu. Turpis vitae urna aliquet ornare mauris nisl, eu lorem quis dui erat. Convallis enim rutrum nibh etiam, arcu rhoncus donec class pulvinar aenean. Sed est ut pede, conubia elit arcu erat libero consequat aenean, molestie turpis donec aute vitae vitae, vitae eu in wisi interdum vehicula consequat, quis blandit urna rutrum. Feugiat nisl ac et proin, magnis neque nibh ultricies, sagittis cras, elit suscipit, ac suspendisse curabitur. Egestas et et et fringilla, hendrerit non malesuada nec.',
+        header: {
+            source: 'data/about_1.jpg'
+        },
+        images: [{
+                source: 'data/about_2.jpg',
+                name: 'Eng.Mehdi Mohammadi',
+                position: 'CEO'
+            },
+            {
+                source: 'data/about_3.jpg',
+                name: 'Eng.Mehdi Mohammadi',
+                position: 'CEO'
+            }
+        ]
     };
 
     setTimeout(function () {
@@ -328,22 +458,20 @@ function ShowUnderconsideration() {
 };
 
 /****************************
-*							*
-*      Responsive Event     * 
-*							*
-****************************/
+ *							*
+ *      Responsive Event     * 
+ *							*
+ ****************************/
 
-function CheckForWidth() {
-}
+function CheckForWidth() {}
 
-$(window).resize(function (e) {
-});
+$(window).resize(function (e) {});
 
 /****************************
-*							*
-*  Project Carousel Event   * 
-*							*
-****************************/
+ *							*
+ *  Project Carousel Event   * 
+ *							*
+ ****************************/
 
 var Page = 0;
 
