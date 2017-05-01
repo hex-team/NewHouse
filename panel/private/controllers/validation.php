@@ -81,7 +81,7 @@
 			return $errors;
 		}
 
-		public static function requiredOnHeaders ($_requiredFields)
+		public static function requiredOnHeader ($_requiredFields)
 		{
 			$errors = [];
 			$headers = getallheaders();
