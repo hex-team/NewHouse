@@ -11,7 +11,8 @@ window.addEventListener('load', Load, !1);
  *      Main Page Config     *
  *							*
  ****************************/
-particlesJS('particles-js', {
+setTimeout(function() {
+    particlesJS('particles-js', {
     "particles": {
         "number": {
             "value": 160,
@@ -67,7 +68,7 @@ particlesJS('particles-js', {
         },
         "move": {
             "enable": true,
-            "speed": 19.24094473038627,
+            "speed": 14,
             "direction": "none",
             "random": true,
             "straight": false,
@@ -121,6 +122,7 @@ particlesJS('particles-js', {
     },
     "retina_detect": true
 });
+},700);
 
 
 function MainPageInit() {
@@ -257,10 +259,15 @@ function Load() {
     $('#Main').addClass('loaded');
 
     $('body').addClass('show_border');
+    
+    setTimeout(function () {
+        $('.logo_circle').addClass('start_circle_animation');
+    },200);
 
     setTimeout(function () {
         $('.main').addClass('no_selector');
-    }, 1300);
+        $('.logo_circle').remove();
+    }, 630);
 
     var State = window.location.hash.replace('#', '');
 

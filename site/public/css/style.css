@@ -39,11 +39,25 @@ body {
 }
 
 .main {
-    margin: 35px;
-    background: transparent;
+    margin:35px;
+    background: #fff;
     min-height: calc(100% - 70px);
     box-sizing: border-box;
     overflow: hidden;
+    -webkit-transition: background .4s ease-out;
+    -moz-transition: background .4s ease-out;
+    -ms-transition: background .4s ease-out;
+    -o-transition: background .4s ease-out;
+    transition: background .4s ease-out;
+}
+
+.main.no_selector{
+    background: transparent;
+    -webkit-transition: background .4s ease-out;
+    -moz-transition: background .4s ease-out;
+    -ms-transition: background .4s ease-out;
+    -o-transition: background .4s ease-out;
+    transition: background .4s ease-out;
 }
 
 .alert {
@@ -200,6 +214,7 @@ body {
 
 .main_page #Logo{
     top: 50%;
+    left: 45px;
     -ms-transform: translate(0%, -50%);
     -webkit-transform: translate(0%, -50%);
     transform: translate(0%, -50%);
@@ -207,8 +222,8 @@ body {
 
 #Logo {
     position: absolute;
-    left: 45px;
-    top: 45px;
+    left: 60px;
+    top: 60px;
     width: auto;
     height: 100px;
 }
@@ -242,11 +257,26 @@ body {
 }
 
 #Logo .st4 {
-    opacity: 0;
+    fill: transparent;
+    stroke-width: 4px;
+    stroke: #000;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: dash 2s linear alternate forwards 1.2s;
 }
 
-.main_page .logo_circle{
-    display: block;
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: #000;
+  }
+}
+
+.logo_circle {
+    opacity: 0;
     position: fixed;
     top: 50%;
     left: -50%;
@@ -257,10 +287,10 @@ body {
     -ms-transform: translate(0%, -50%);
     -webkit-transform: translate(0%, -50%);
     transform: translate(0%, -50%);
-    -webkit-transform: scale(150, 150);
-    -moz-transform: scale(150, 150);
-    -o-transform: scale(150, 150);
-    transform: scale(150, 150);
+    -webkit-transform: scale(130, 130);
+    -moz-transform: scale(130, 130);
+    -o-transform: scale(130, 130);
+    transform: scale(130, 130);
     -webkit-transition: transform .4s ease-out;
     -moz-transition: transform .4s ease-out;
     -ms-transition: transform .4s ease-out;
@@ -269,12 +299,9 @@ body {
     z-index: 9999;
 }
 
-.logo_circle {
-    display: none;
-}
-
-.loaded .logo_circle {
-    top: 46.88%;
+.start_circle_animation.logo_circle {
+    opacity: 1;
+    top: 46.99%;
     left: 108px;
     -webkit-transform: scale(1, 1);
     -moz-transform: scale(1, 1);
@@ -286,6 +313,7 @@ body {
     -o-transition: transform .4s ease-out;
     transition: transform .4s ease-out;
 }
+
 
 
 /****************************
@@ -1660,7 +1688,7 @@ body {
 }
 
 #particles-js {
-    display: none; 
+    display: none;
     width: 100%;
     height: 100%;
     background-color: transparent;
