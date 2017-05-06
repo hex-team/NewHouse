@@ -1,39 +1,48 @@
 <?php
 	class User
 	{
-		private $login, $token;
+		private $user;
 
 		public function __construct ()
 		{
 			$this -> user = new TblUsers();
-			$this -> token = new Token();
 		}
 
 		public function login ($_params)
 		{
-			$user = $this -> user -> authenticate($_params['username'], $_params['password']);
+			$userData = $this -> user -> authenticate($_params['username'], $_params['password']);
 
-			if ($user != null)
+			if ($userData != null)
 			{
-				if (Token::verify($user['token'])) $token = $user['token'];
-				else $token = Token::generate($user['id'], LOGIN_TIMEOUT);
+				if (Token::verify($userData['token'])) $token = $userData['token'];
+				else $token = Token::generate($userData['id'], LOGIN_TIMEOUT);
 			}
 
-			if ($this -> user -> update($user['id'], ['token' => $token, 'last_login' => NOW])) return ['token' => $token];
-
-			return false;
+			if ($this -> user -> update($userData['id'], ['token' => $token, 'last_login' => NOW])) return ['token' => $token];
 		}
 
-		public function logout ($_params)
+		public function logout ($_token)
 		{
-			if (Token::verify($_params['token']))
-			{
-				$userid = Token::parse($_params['token'])['userid'];
+			$userid = Token::parse($_token)['userid'];
 
-				if ($this -> user -> update($userid, ['token' => null])) return true;
+			if ($this -> user -> update($userid, ['token' => null])) return true;
+		}
+
+		public static function authorize()
+		{
+			http_response_code(BAD_REQUEST);
+
+			$token = Validation::header(['Authorization'])['Authorization'];
+
+			if (!$token) return false;
+			if (!Token::verify($token))
+			{
+				http_response_code(UNAUTHORIZED);
+
+				return false;
 			}
 
-			return false;
+			return true;
 		}
 	}
 ?>

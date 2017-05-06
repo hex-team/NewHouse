@@ -32,7 +32,7 @@
 
 		private static function getClientRole ()
 		{
-			return USER;
+			return ADMIN;
 		}
 
 		private static function getClientCountry ()

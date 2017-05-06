@@ -1,3 +1,5 @@
 RewriteBase /
 RewriteRule ^api\/login$ apihndlr.php?api=login [L,NC]
 RewriteRule ^api\/logout$ apihndlr.php?api=logout [L,NC]
+RewriteRule ^api\/setwidget$ apihndlr.php?api=setwidget [L,NC]
+RewriteRule ^api\/getwidget$ apihndlr.php?api=getwidget [L,NC]

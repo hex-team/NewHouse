@@ -1,11 +1,8 @@
 <?php
 	class Common
 	{
-		public static function formatResponse ($_message = null, $_response = [])
+		public static function response ($_response = [])
 		{
-			$_message = ucwords($_message);
-			$_response['message'] = $_message;
-
 			return json_encode($_response);
 		}
 

@@ -9,10 +9,9 @@
 		header('Access-Control-Allow-Headers: Content-Type, User-Agent, Cache-Control');
 		header('Content-Type: application/json; charset=' . CHARSET);
 
-		$allowedParams = explode(DELIMITER, API_PARAMS);
-		$err = Validation::requiredOnGet($allowedParams);
+		Maintenance::checkIP();
 
-		if (!empty($err)) throw new Exception(API_PARAMETERS_MSG . ' (' . implode(DELIMITER, $err) . ')');
+		$allowedParams = explode(DELIMITER, API_PARAMS);
 
 		$get = Validation::get($allowedParams);
 		$api = strtoupper($get[$allowedParams[0]]) . API_PREFIX;
@@ -21,8 +20,6 @@
 	}
 	catch (Exception $ex)
 	{
-		http_response_code(BAD_REQUEST);
-
-		Maintenance::handleApiErrors($ex);
+		Maintenance::handleExceptions($ex);
 	}
 ?>

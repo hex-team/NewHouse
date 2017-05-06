@@ -15,7 +15,7 @@
 			}
 		}
 
-		public function action ($_file, $_function, $_line, $_message, $_mode = DB)
+		public function action ($_file, $_function, $_line, $_message = null, $_mode = DB)
 		{
 			if ($_mode == FILE) self::insertToFile($_file, $_function, $_line, $_message, INFORMATION);
 			else if ($_mode == DB)

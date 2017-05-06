@@ -9,7 +9,7 @@
 		ini_set('log_errors', DISABLE);
 	}
 
-	set_include_path(implode(PATH_SEPARATOR, array(CONTROLLERS_PATH, MODELS_PATH)));
+	set_include_path(implode(PATH_SEPARATOR, array(LIBS_PATH, CONTROLLERS_PATH, MODELS_PATH)));
 	spl_autoload_register();
 
 	Session::set();

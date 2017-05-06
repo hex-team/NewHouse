@@ -41,8 +41,6 @@
 				$this -> dbh = null;
 
 				Maintenance::handleExceptions($ex, ($this -> dbName == DB_LOG) ? FILE : DB);
-
-				return false;
 			}
 		}
 
@@ -63,8 +61,6 @@
 				$this -> dbh = null;
 
 				Maintenance::handleExceptions($ex, ($this -> dbName == DB_LOG) ? FILE : DB);
-
-				return false;
 			}
 		}
 	}

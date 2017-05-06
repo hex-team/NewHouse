@@ -1,20 +1,25 @@
 <?php
-	$allowedParams = explode(DELIMITER, LOGIN_PARAMS);
-	$err = Validation::requiredOnPost($allowedParams);
+	http_response_code(BAD_REQUEST);
 
-	if (!empty($err)) throw new Exception(API_PARAMETERS_MSG . ' (' . implode(DELIMITER, $err) . ')');
+	$allowedParams = explode(DELIMITER, LOGIN_PARAMS);
 
 	$post = Validation::post($allowedParams);
+
+	if (!$post) die();
 
 	$post[$allowedParams[0]] = substr($post[$allowedParams[0]], 0, MAX_USERNAME_LENGTH);
 	$post[$allowedParams[1]] = substr($post[$allowedParams[1]], 0, MAX_PASSWORD_LENGTH);
 
-	$obj = new User();
+	$user = new User();
 
-	$result = $obj -> login($post);
+	$result = $user -> login($post);
 
-	if (empty($result['token'])) http_response_code(BAD_REQUEST);
-	else http_response_code(OK);
+	if ($result['token'])
+	{
+		http_response_code(OK);
 
-	Maintenance::handleApiActions((empty($result['token']) ? REQUEST_MSG : REQUEST_SUCCESSFULL_MSG), $result);
+		echo Common::response($result);
+	}
+
+	die();
 ?>
