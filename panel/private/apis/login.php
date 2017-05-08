@@ -3,16 +3,16 @@
 
 	$allowedParams = explode(DELIMITER, LOGIN_PARAMS);
 
-	$post = Validation::post($allowedParams);
+	$params = Validation::post($allowedParams);
 
-	if (!$post) die();
+	if (!$params) die();
 
-	$post[$allowedParams[0]] = substr($post[$allowedParams[0]], 0, MAX_USERNAME_LENGTH);
-	$post[$allowedParams[1]] = substr($post[$allowedParams[1]], 0, MAX_PASSWORD_LENGTH);
+	$params[$allowedParams[0]] = substr($params[$allowedParams[0]], 0, MAX_USERNAME_LENGTH);
+	$params[$allowedParams[1]] = substr($params[$allowedParams[1]], 0, MAX_PASSWORD_LENGTH);
 
 	$user = new User();
 
-	$result = $user -> login($post);
+	$result = $user -> login($params);
 
 	if ($result['token'])
 	{

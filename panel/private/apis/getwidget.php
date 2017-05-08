@@ -3,15 +3,15 @@
 
 	$allowedParams = explode(DELIMITER, GETWIDGET_PARAMS);
 
-	$post = Validation::post($allowedParams);
+	$params = Validation::get($allowedParams);
 
-	if (!$post) die();
+	if (!$params) die();
 
-	$post[$allowedParams[0]] = substr($post[$allowedParams[0]], 0, MAX_NAME_LENGTH);
+	$params[$allowedParams[0]] = substr($params[$allowedParams[0]], 0, MAX_NAME_LENGTH);
 
 	$widget = new Widget();
 
-	$result = $widget -> get($post);
+	$result = $widget -> get($params);
 
 	if ($result)
 	{
