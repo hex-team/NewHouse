@@ -60,7 +60,7 @@
 	define('MAINTENANCE_MODE', true);
 	define('LOG_ERRORS', false);
 	define('LOG_ACTIONS', false);
-	define('VALID_IP_ADDRESS', '127.0.0.1,::1,5.114.105.137,162.245.83.252,89.199.85.93');
+	define('VALID_IP_ADDRESS', '127.0.0.1,::1,5.114.105.137,162.245.83.252,89.199.85.93,5.114.41.38');
 
 	// Paths
 	define('APP_ROOT_PATH', dirname(dirname(__dir__)) . '/');
