@@ -12,7 +12,7 @@
 		{
 			return parent::_insert([
 				'username' => $_username,
-				'password' => $_password,
+				'password' => md5($_password),
 				'first_name' => $_firstname,
 				'last_name' => $_lastname]);
 		}
@@ -42,8 +42,6 @@
 
 		public function getCount ($_user = null)
 		{
-			if ($_user != null) $where = 'id = ' . $_user . ' OR username = \'' . $_user . '\'';
-
 			$result = parent::_select(['COUNT(*)'], $where);
 
 			return $result -> fetchColumn();
