@@ -24,8 +24,9 @@
 		public function logout ($_token)
 		{
 			$userid = Token::parse($_token)['userid'];
+			$result = $this -> user -> update($userid, ['token' => null]);
 
-			if ($this -> user -> update($userid, ['token' => null])) return true;
+			return $result;
 		}
 
 		public static function authorize()

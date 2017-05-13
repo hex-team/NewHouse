@@ -10,7 +10,9 @@
 
 		public function update ($_params)
 		{
-			if ($this -> widget -> update($_params['widget'], ['data' => $_params['data'], 'last_update' => NOW])) return true;
+			$result = $this -> widget -> update($_params['widget'], ['data' => $_params['data'], 'last_update' => NOW]);
+
+			return $result;
 		}
 
 		public function get ($_params)
