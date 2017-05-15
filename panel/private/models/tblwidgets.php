@@ -29,8 +29,6 @@
 
 		public function update ($_name, $_params)
 		{
-			$where = null;
-
 			$where = 'name = \'' . $_name . '\'';
 
 			return parent::_update($_params, $where);
