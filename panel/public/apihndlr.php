@@ -7,6 +7,7 @@
 		header('Access-Control-Allow-Credentials: true');
 		header('Access-Control-Allow-Methods: OPTIONS, GET, POST');
 		header('Access-Control-Allow-Headers: Content-Type, User-Agent, Cache-Control');
+		header('Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Authorization, Accept, Client-Security-Token, Accept-Encoding');
 		header('Content-Type: application/json; charset=' . CHARSET);
 
 		Maintenance::checkIP();
