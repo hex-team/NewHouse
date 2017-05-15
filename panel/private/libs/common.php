@@ -16,5 +16,14 @@
 
 			return $string;
 		}
+
+		public static function upload ($_file)
+		{
+			$name = self::randomString(16) . basename($_file["file"]["name"]);
+			$result = move_uploaded_file($_file["file"]["tmp_name"], UPLOADED_IMAGES_PATH . $name);
+
+			if ($result) return ['name' => $name];
+			else return null;
+		}
 	}
 ?>
