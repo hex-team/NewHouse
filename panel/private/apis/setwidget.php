@@ -3,7 +3,7 @@
 
 	$allowedParams = explode(DELIMITER, SETWIDGET_PARAMS);
 
-	$params = Validation::post($allowedParams);
+	$params = Validation::post($allowedParams, false);
 
 	if (!$params) die();
 
