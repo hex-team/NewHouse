@@ -57,10 +57,10 @@
 	define('API_PREFIX', '_API');
 	define('CHARSET', 'UTF-8');
 	define('TIME_ZONE', 'Asia/Tehran');
-	define('MAINTENANCE_MODE', true);
+	define('MAINTENANCE_MODE', false);
 	define('LOG_ERRORS', false);
 	define('LOG_ACTIONS', false);
-	define('VALID_IP_ADDRESS', '127.0.0.1,::1,89.198.155.85,5.113.104.101');
+	define('VALID_IP_ADDRESS', '127.0.0.1,::1,');
 
 	// Paths
 	define('APP_ROOT_PATH', dirname(dirname(__dir__)) . '/');
