@@ -37,7 +37,7 @@
 	define('MIN_PAGE', 1);
 	define('MAX_PAGE', 100);
 	define('MAX_Q_LENGTH', 32);
-	define('MAX_NAME_LENGTH', 32);
+	define('MAX_NAME_LENGTH', 128);
 	define('MAX_TITLE_LENGTH', 32);
 	define('MAX_BODY_LENGTH', 384);
 	define('MAX_IMAGE_SIZE', 2048);
@@ -83,6 +83,7 @@
 	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
 	define('GETWIDGET_API', APIS_PATH . 'getwidget.php');
 	define('UPLOAD_API', APIS_PATH . 'upload.php');
+	define('DOWNLOAD_API', APIS_PATH . 'download.php');
 
 	// APIs Allowed Parameters
 	define('API_PARAMS', 'api');
@@ -91,6 +92,7 @@
 	define('SETWIDGET_PARAMS', 'widget,data');
 	define('GETWIDGET_PARAMS', 'widget');
 	define('UPLOAD_PARAMS', 'file');
+	define('DOWNLOAD_PARAMS', 'file');
 
 	// APIs Authorization Check
 	define('AUTHORIZATION_CHECK', implode(DELIMITER, ['logout']));
