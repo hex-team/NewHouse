@@ -29,6 +29,17 @@
 			return $allowedParams;
 		}
 
+		public static function file ($_params = [])
+		{
+			$allowedParams = [];
+
+			foreach ($_params as $param)
+				if (isset($_FILES[$param])) $allowedParams[$param] = $_FILES[$param];
+				else return null;
+
+			return $allowedParams;
+		}
+
 		public static function header ($_params = [], $_sanitize = true)
 		{
 			$allowedParams = [];

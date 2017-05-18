@@ -82,6 +82,7 @@
 	define('LOGOUT_API', APIS_PATH . 'logout.php');
 	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
 	define('GETWIDGET_API', APIS_PATH . 'getwidget.php');
+	define('UPLOAD_API', APIS_PATH . 'upload.php');
 
 	// APIs Allowed Parameters
 	define('API_PARAMS', 'api');
@@ -89,6 +90,7 @@
 	define('LOGOUT_PARAMS', '');
 	define('SETWIDGET_PARAMS', 'widget,data');
 	define('GETWIDGET_PARAMS', 'widget');
+	define('UPLOAD_PARAMS', 'file');
 
 	// APIs Authorization Check
 	define('AUTHORIZATION_CHECK', implode(DELIMITER, ['logout']));
