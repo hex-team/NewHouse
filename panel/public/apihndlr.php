@@ -1,6 +1,6 @@
 <?php
 	require_once '../private/initialize.php';
-
+ob_flush();
 	try
 	{
 		header('Content-Type: application/json; charset=' . CHARSET);
