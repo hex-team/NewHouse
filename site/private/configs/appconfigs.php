@@ -35,8 +35,9 @@
 	define('EN_LANG', 1);
 
 	// Application Settings
+	define('MIN_PAGE', 1);
+	define('MAX_PAGE', 100);
 	define('MAX_NAME_LENGTH', 128);
-	define('MAX_IMAGE_SIZE', 2048);
 	define('MAX_USERNAME_LENGTH', 32);
 	define('MAX_PASSWORD_LENGTH', 32);
 	define('MAX_TOKEN_LENGTH', 149);
@@ -73,20 +74,12 @@
 	define('A_LOG_FILE', APP_ROOT_PATH . 'a_log.log');
 
 	// Registered APIs
-	define('LOGIN_API', APIS_PATH . 'login.php');
-	define('LOGOUT_API', APIS_PATH . 'logout.php');
-	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
 	define('GETWIDGET_API', APIS_PATH . 'getwidget.php');
-	define('UPLOAD_API', APIS_PATH . 'upload.php');
 	define('DOWNLOAD_API', APIS_PATH . 'download.php');
 
 	// APIs Allowed Parameters
 	define('API_PARAMS', 'api');
-	define('LOGIN_PARAMS', 'username,password');
-	define('LOGOUT_PARAMS', '');
-	define('SETWIDGET_PARAMS', 'widget,data');
 	define('GETWIDGET_PARAMS', 'widget');
-	define('UPLOAD_PARAMS', 'file');
 	define('DOWNLOAD_PARAMS', 'file');
 
 	// APIs Authorization Check
@@ -122,7 +115,6 @@
 	define('DB_LOG', 'log');
 
 	// Tables
-	define('TBL_USERS', 'users');
 	define('TBL_WIDGETS', 'widgets');
 	define('TBL_LOGS', 'logs');
 ?>

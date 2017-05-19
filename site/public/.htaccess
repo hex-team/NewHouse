@@ -1,0 +1,3 @@
+RewriteBase /
+RewriteRule ^api\/getwidget\/(.+)$ apihndlr.php?api=getwidget&widget=$1 [L,NC]
+RewriteRule ^api\/download\/(.+)$ apihndlr.php?api=download&file=$1 [L,NC]
