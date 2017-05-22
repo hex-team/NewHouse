@@ -7,7 +7,7 @@
 
 	if (!$params) die();
 
-	$params[$allowedParams[0]] = substr($params[$allowedParams[0]], 0, MAX_NAME_LENGTH);
+	$params[$allowedParams[0]] = substr($params[$allowedParams[0]], 0, MAX_ID_LENGTH);
 
 	$widget = new Widget();
 
