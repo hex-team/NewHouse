@@ -1,6 +1,4 @@
 <?php
-	if (!User::authorize()) die();
-
 	$allowedParams = explode(DELIMITER, GETWIDGET_PARAMS);
 
 	$params = Validation::get($allowedParams);
