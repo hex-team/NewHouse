@@ -35,8 +35,7 @@
 	define('EN_LANG', 1);
 
 	// Application Settings
-	define('MIN_PAGE', 1);
-	define('MAX_PAGE', 100);
+	define('MAX_ID_LENGTH', 11);
 	define('MAX_NAME_LENGTH', 128);
 	define('MAX_USERNAME_LENGTH', 32);
 	define('MAX_PASSWORD_LENGTH', 32);

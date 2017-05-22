@@ -10,9 +10,11 @@
 
 		public function insert ($_name, $_data, $_isActive = ENABLE)
 		{
+			var_dump($_data);
 			return parent::_insert([
 				'name' => $_name,
 				'data' => $_data,
+				'last_update' => NOW,
 				'is_active' => $_isActive]);
 		}
 
@@ -20,16 +22,16 @@
 		{
 			$where = 'name = \'' . $_name . '\'';
 
-			$result = parent::_select(['name', 'data'], $where);
+			$result = parent::_select(['id', 'name', 'data'], $where);
 
-			$fetchedResult = $result -> fetch(PDO::FETCH_ASSOC);
+			while ($row = $result -> fetch(PDO::FETCH_ASSOC)) $fetchedResult[] = $row;
 
 			return $fetchedResult;
 		}
 
-		public function update ($_name, $_params)
+		public function update ($_id, $_params)
 		{
-			$where = 'name = \'' . $_name . '\'';
+			$where = 'id = \'' . $_id . '\'';
 
 			return parent::_update($_params, $where);
 		}
