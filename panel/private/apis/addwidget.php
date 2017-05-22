@@ -1,5 +1,5 @@
 <?php
-	// if (!User::authorize()) die();
+	if (!User::authorize()) die();
 
 	$allowedParams = explode(DELIMITER, ADDWIDGET_PARAMS);
 
