@@ -87,7 +87,7 @@
 	define('LOGIN_PARAMS', 'username,password');
 	define('LOGOUT_PARAMS', '');
 	define('ADDWIDGET_PARAMS', 'widget,data');
-	define('SETWIDGET_PARAMS', 'widget,data');
+	define('SETWIDGET_PARAMS', 'id,data');
 	define('GETWIDGET_PARAMS', 'widget');
 	define('UPLOAD_PARAMS', 'file');
 	define('DOWNLOAD_PARAMS', 'file');

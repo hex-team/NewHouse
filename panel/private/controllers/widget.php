@@ -17,7 +17,7 @@
 
 		public function update ($_params)
 		{
-			$result = $this -> widget -> update($_params['widget'], ['data' => $_params['data'], 'last_update' => NOW]);
+			$result = $this -> widget -> update($_params['id'], ['data' => $_params['data'], 'last_update' => NOW]);
 
 			return $result;
 		}
