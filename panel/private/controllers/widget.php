@@ -15,6 +15,13 @@
 			return $result;
 		}
 
+		public function get ($_params)
+		{
+			$result = $this -> widget -> get($_params['widget']);
+
+			return $result;
+		}
+
 		public function update ($_params)
 		{
 			$result = $this -> widget -> update($_params['id'], ['data' => $_params['data'], 'last_update' => NOW]);
@@ -22,9 +29,9 @@
 			return $result;
 		}
 
-		public function get ($_params)
+		public function delete ($_params)
 		{
-			$result = $this -> widget -> get($_params['widget']);
+			$result = $this -> widget -> delete($_params['id']);
 
 			return $result;
 		}

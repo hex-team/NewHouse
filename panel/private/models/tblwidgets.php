@@ -35,5 +35,14 @@
 
 			return parent::_update($_params, $where);
 		}
+
+		public function delete ($_id)
+		{
+			$whereStr = 'id = ' . $_id;
+
+			$dQuery = 'DELETE FROM ' . $this -> tableName . (empty($_whereStr) ? null : ' WHERE ' . $_whereStr) . ';';
+
+			return (bool) $this -> dbh -> execute($dQuery);
+		}
 	}
 ?>

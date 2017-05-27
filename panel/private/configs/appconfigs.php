@@ -77,8 +77,9 @@
 	define('LOGIN_API', APIS_PATH . 'login.php');
 	define('LOGOUT_API', APIS_PATH . 'logout.php');
 	define('ADDWIDGET_API', APIS_PATH . 'addwidget.php');
-	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
 	define('GETWIDGET_API', APIS_PATH . 'getwidget.php');
+	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
+	define('REMOVEWIDGET_API', APIS_PATH . 'removewidget.php');
 	define('UPLOAD_API', APIS_PATH . 'upload.php');
 	define('DOWNLOAD_API', APIS_PATH . 'download.php');
 
@@ -87,8 +88,9 @@
 	define('LOGIN_PARAMS', 'username,password');
 	define('LOGOUT_PARAMS', '');
 	define('ADDWIDGET_PARAMS', 'widget,data');
-	define('SETWIDGET_PARAMS', 'id,data');
 	define('GETWIDGET_PARAMS', 'widget');
+	define('SETWIDGET_PARAMS', 'id,data');
+	define('REMOVEWIDGET_PARAMS', 'id');
 	define('UPLOAD_PARAMS', 'file');
 	define('DOWNLOAD_PARAMS', 'file');
 

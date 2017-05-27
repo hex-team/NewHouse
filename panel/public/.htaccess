@@ -1,7 +1,7 @@
 RewriteBase /
 RewriteRule ^api\/login$ apihndlr.php?api=login [L,NC]
 RewriteRule ^api\/logout$ apihndlr.php?api=logout [L,NC]
-RewriteRule ^api\/addwidget$ apihndlr.php?api=addwidget [L,NC]
+RewriteRule ^api\/widget$ apihndlr.php?api=widget [L,NC]
 RewriteRule ^api\/setwidget$ apihndlr.php?api=setwidget [L,NC]
 RewriteRule ^api\/getwidget\/(.+)$ apihndlr.php?api=getwidget&widget=$1 [L,NC]
 RewriteRule ^api\/upload$ apihndlr.php?api=upload [L,NC]
