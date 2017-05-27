@@ -1,4 +1,4 @@
-ewriteBase /
+RewriteBase /
 RewriteRule ^api\/login$ apihndlr.php?api=login [L,NC]
 RewriteRule ^api\/logout$ apihndlr.php?api=logout [L,NC]
 RewriteRule ^api\/addwidget$ apihndlr.php?api=addwidget [L,NC]
