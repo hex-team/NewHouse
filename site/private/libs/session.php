@@ -22,6 +22,7 @@
 			$_SESSION['COUNTRY'] = self::getClientCountry();
 			$_SESSION['LANGUAGE'] = self::getClientLanguage($_SESSION['COUNTRY']);
 			$_SESSION['LAST_ACTIVITY'] = time();
+			$_SESSION['AUTHORIZATION'] = null;
 		}
 
 		public static function destroy ()

@@ -7,10 +7,10 @@
 		{
 			$token = self::parse($_token);
 
-			if (!$token) return false; //throw new Exception(OBJECT_ERROR_MSG)
+			if (!$token) return false; //throw new Exception(OBJECT_ERROR_MSG);
 
 			$user = new TblUsers();
-			$userData = $user -> get($token['userid'])[0];
+			$userData = $user -> get($token['userid']);
 
 			try
 			{

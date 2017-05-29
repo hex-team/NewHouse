@@ -37,6 +37,8 @@
 
 			while ($row = $result -> fetch(PDO::FETCH_ASSOC)) $fetchedResult[] = $row;
 
+			if (count($fetchedResult) == 1) $fetchedResult = $fetchedResult[0];
+
 			return $fetchedResult;
 		}
 
@@ -51,6 +53,7 @@
 		{
 			$where = null;
 
+			if (isset($_params['password'])) $_params['password'] = md5($_params['password']);
 			if ($_user != null) $where = (Validation::isNumber($_user) ? 'id = ' . $_user . ' OR ' : null) . 'username = \'' . $_user . '\'';
 
 			return parent::_update($_params, $where);

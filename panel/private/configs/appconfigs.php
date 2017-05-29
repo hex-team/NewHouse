@@ -76,6 +76,7 @@
 	// Registered APIs
 	define('LOGIN_API', APIS_PATH . 'login.php');
 	define('LOGOUT_API', APIS_PATH . 'logout.php');
+	define('CHANGEPASSWORD_API', APIS_PATH . 'changepassword.php');
 	define('ADDWIDGET_API', APIS_PATH . 'addwidget.php');
 	define('GETWIDGET_API', APIS_PATH . 'getwidget.php');
 	define('SETWIDGET_API', APIS_PATH . 'setwidget.php');
@@ -86,6 +87,7 @@
 	// APIs Allowed Parameters
 	define('API_PARAMS', 'api');
 	define('LOGIN_PARAMS', 'username,password');
+	define('CHANGEPASSWORD_PARAMS', 'old,new');
 	define('LOGOUT_PARAMS', '');
 	define('ADDWIDGET_PARAMS', 'widget,data');
 	define('GETWIDGET_PARAMS', 'widget');

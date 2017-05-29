@@ -43,7 +43,21 @@
 				return false;
 			}
 
+			$_SESSION['AUTHORIZATION'] = $token;
+
 			return true;
+		}
+
+		public function changePassword($_params)
+		{
+			$result = null;
+			$userid = Token::parse($_SESSION['AUTHORIZATION'])['userid'];
+			$userData = $this -> user -> get($userid);
+
+			if ($userData['password'] == md5($_params['old'])) $result = $this -> user -> update($userid, ['password' => $_params['new'], token => null]);
+			if ($result) $result = $this -> login(['username' => $userData['username'], 'password' => $_params['new']]);
+
+			return $result;
 		}
 	}
 ?>
