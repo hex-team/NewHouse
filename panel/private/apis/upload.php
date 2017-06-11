@@ -7,8 +7,6 @@
 
 	if (!$params) die();
 
-	// $params[$allowedParams[0]] = substr($params[$allowedParams[0]], 0, MAX_NAME_LENGTH);
-
 	$result = Common::upload($params);
 
 	if ($result)
