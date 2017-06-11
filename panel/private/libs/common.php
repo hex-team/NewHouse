@@ -19,14 +19,15 @@
 
 		public static function upload ($_file)
 		{
-			$name = self::randomString(16) . basename($_file["file"]["name"]);
-			$result = move_uploaded_file($_file["file"]["tmp_name"], UPLOADED_IMAGES_PATH . $name);
+			if (!isset($_file['error']) || is_array($_file['error']) || $_file['error'] != UPLOAD_ERR_OK)  return null;
 
-			if ($result) return ['name' => $name];
+			$name = self::randomString(16) . basename($_file["file"]["name"]);
+
+			if (move_uploaded_file($_file["file"]["tmp_name"], UPLOADED_IMAGES_PATH . $name)) return ['name' => $name];
 			else return null;
 		}
 
-		function download($_name)
+		function download ($_name)
 		{
 			$file = UPLOADED_IMAGES_PATH . $_name;
 
