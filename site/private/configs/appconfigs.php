@@ -105,7 +105,7 @@
 	// Database Identities
 	define('DB_HOST', 'localhost');
 	define('DB_PORT', 3306);
-	define('DB_USERNAME', 'admin');
+	define('DB_USERNAME', 'tarhoasar');
 	define('DB_PASSWORD', 'Admin9203b!#');
 	define('DB_ChARSET', 'utf8');
 
