@@ -47,7 +47,7 @@
 	define('APPLICATION_TITLE', 'Tarh-o Asar');
 	define('CSRF_TOKEN_LENGTH', 32);
 	define('LOGIN_TOKEN_LENGTH', 32);
-	define('TOKEN_SECRET', 'aaaaaaaaaa');
+	define('TOKEN_SECRET', '35582d15021c90c280b1552e5937a883');
 	define('LOGIN_TIMEOUT', 1800);
 	define('API_PREFIX', '_API');
 	define('CHARSET', 'UTF-8');
